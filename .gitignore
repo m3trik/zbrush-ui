@@ -21,8 +21,9 @@
 
 
 #exception for directories, and sub-directories
-!tk_zbrush/
-!tk_zbrush/*/
+!tk_zbrush/*
+!tk_zbrush/*/*
+!docs/*
 
 
 
