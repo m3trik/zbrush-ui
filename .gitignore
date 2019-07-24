@@ -2,12 +2,15 @@
 ## ZBrush
 #################
 
-#ignore all
-*
+#ignore all directories, and sub-directories
+*/*
+
+#ignore all files containing '.'
+*.*
+
 
 #except
 !.gitignore
-!tk_zbrush
 !tk_zbrush.txt
 !tk_zbrush.zsc
 !tk_zbrush_testScript.txt
@@ -17,10 +20,17 @@
 !tk_ui_8.19.cfg
 
 
-#ignore subdirectories
-!*/
+#exception for directories, and sub-directories
+!tk_zbrush/
+!tk_zbrush/*/
 
-#exception for subdirectories
+
+
+
+
+
+
+
 
 
 
