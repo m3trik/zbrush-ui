@@ -1,18 +1,13 @@
-//testScript zbrush plugin
-[ISubPalette,"ZPlugin:testScript"]
+//tk_zbrush_testScript zbrush plugin
+[ISubPalette,"ZPlugin:tk_zbrush_testScript"]
 
 //Reload Script ctrl + Shift R
 //button hotkeys ctrl+Shift A, ctrl + Shift B
 
-
-
-
-
-
 /*+-------+
   |Buttons|
   +-------+*/
-[IButton, "ZPlugin:testScript:button A", 
+[IButton, "ZPlugin:tk_zbrush_testScript:button A", 
 "Test Button A", 
 //
 //______begin code_____________________________________________________________________
@@ -33,7 +28,7 @@
 ]
 
 
-[IButton,"ZPlugin:testScript:button B", 
+[IButton,"ZPlugin:tk_zbrush_testScript:button B", 
 "Test Button B", 
 //
 //______begin code_____________________________________________________________________
@@ -47,55 +42,17 @@
 ,,75
 ]
 
-
-
-
-
-
-
-
-
 /*+--------+
   |Switches|
   +--------+*/
-[ISwitch, "ZPlugin:testScript:Switch A", 0,
+[ISwitch, "ZPlugin:tk_zbrush_testScript:Switch A", 0,
 "Test Switch A",
-
-//______begin code____(up state)_______________________________________________________
-
-[ISet, Tool:Display Properties:Polygons Draw Size,1]
-
-//_____________________________________________________________________________________
-,//leave comma in place
-//_____________________________________________________________________________________
-
-[ISet, Tool:Display Properties:Polygons Draw Size,0.85]
+//must have a comma inserted in code area if no working code is currently in place
+//______begin code_____________________________________________________________________
 
 
-//______end code_____(down state)______________________________________________________
-//
+
 ,
-75,
-]
-[IEnable, "ZPlugin:testScript:Switch A"]
-
-
-
-
-
-
-
-
-[ISwitch, "ZPlugin:testScript:Switch B", 0,
-"Test Switch B",
-
-//______begin code____(down state)_____________________________________________________
-
-
-
-//_____________________________________________________________________________________
-,//leave comma in place
-//_____________________________________________________________________________________
 
 
 
@@ -104,24 +61,31 @@
 ,
 75,
 ]
-[IEnable, "ZPlugin:testScript:Switch B"]
+[IEnable, "ZPlugin:tk_zbrush_testScript:Switch A"]
+
+
+[ISwitch, "ZPlugin:tk_zbrush_testScript:Switch B", 0,
+"Test Switch B",
+//must have a comma inserted in code area if no working code is currently in place
+//______begin code_____________________________________________________________________
 
 
 
+,
 
 
 
-
-
-
-
-
-
+//______end code_______________________________________________________________________
+//
+,
+75,
+]
+[IEnable, "ZPlugin:tk_zbrush_testScript:Switch B"]
 
 /*+-------+
   |sliders|
   +-------+*/
-[ISlider, "ZPlugin:testScript:Slider A", 0, 10, 0, 100,//initial value, increment, range
+[ISlider, "ZPlugin:tk_zbrush_testScript:Slider A", 0, 10, 0, 100,//initial value, increment, range
 "Test Slider A",
 //
 //______begin code_____________________________________________________________________
@@ -137,14 +101,7 @@
 ]
 
 
-
-
-
-
-
-
-
-[ISlider, "ZPlugin:testScript:Slider B", 0, 10, 0, 100,//initial value, increment, range
+[ISlider, "ZPlugin:tk_zbrush_testScript:Slider B", 0, 10, 0, 100,//initial value, increment, range
 "Test Slider B",
 //
 //______begin code_____________________________________________________________________

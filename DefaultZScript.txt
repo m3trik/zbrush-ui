@@ -8,81 +8,74 @@ If, [MemGetSize, tk_startup_memBlock], //returns 1 or greater if memory block ex
 	,
 	[IFreeze, [MVarDef, tk_startup_memBlock, 1, 0]]
 
-// main window
-// [ISet, Menus, 0]
-// [IHide, Title]
+
+//run once to set preferences, then store config, and comment out.
+[ISet, Document:Back, 28.1098] //background color
+[ISet, Document:Range,0] //background gradient
 [ISet, Preferences:Lightbox:Open At Launch, 0]
 [ISet, Preferences:Lightbox:Auto Create Shortcuts, 0]
-//[IHide, Quicksave]
-//[IHide, DefaultZScript]
-//[IHide, <Colors]
-//[IHide, Colors>]
-//[IHide, <Layout]
-//[IHide, Layout>]
-//[IHide, Unlock]
-//[IHide, Menus]
+[ISet, Preferences:Interface:Buttons Size, 38]
+[ISet, Preferences:Undo History:Max Undo History, 150] //levels of undo history.
 
 
-// viewport settings
-[IPress, Material:MatCap White Cavity]
-[ISet, Document:Range, 0] //background gradient
-[TransformSet, (Document:Width*.5), (Document:Height*.5), 0, 100, 100, 100, 0, 0, 0]
+
+
+// ui settings
+[TransformSet, (Document:Width*.5), (Document:Height*.5), 0, 100, 100, 100, 0, 0, 0] //canvas size
 [CanvasZoomSet, 1.000]
-[IPress, Transform: Pf]
-[IPress, Transform: Lsym]
+
+[IPress, Preferences:Interface:Wide Buttons]
+[IPress, Preferences:Interface:Auto Hide 2D Tools]
+
+// [ISet, Menus, 0]
+// [IHide, Title]
 
 
-// init L & R menus
-//L menu
-// [IMinimize, L:Subtool]
-// //[IMinimize, L:Subtool:Extract]
-// //[IMinimize, L:Subtool:Insert Mesh]
-// //[IMinimize, L:Subtool:Unified Skin]
-// //[IMinimize, L:Subtool:Shadowbox]
-// [IMinimize, L:PolyGroup]
-// [IMinimize, L:Edgeloop]
-// [IMinimize, L:Mask]
-// [IMinimize, L:Mirror]
-// [IMinimize, L:ReMesh]
-// [IMinimize, L:Edit Topology]
-// [IMinimize, L:MorphTarget]
-// [IMinimize, L:Instanced Geometry]
-// [IMaximize, L:ReMesh:Dynamic SubD]
-// [IMaximize, L:Subtool:Insert Mesh:IMM Brush]
-// //R menu
-// [IMinimize, R:Brush Options]
-// [IMinimize, R:Curve]
-// [IMinimize, R:Symmetry]
-// [IMinimize, R:Viewport]
-// [IMinimize, R:Surface]
-// [IMinimize, R:Texturing]
-// [IMinimize, R:Sketch]
-// [IMinimize, R:Scene]
-// [IMinimize, R:Brush]
-// [IMinimize, R:Transpose]
-// [IMaximize, R:Maps:Texture:Create]
-// [IMinimize, R:ProjectFile:UI]
-// [IMinimize, R:ProjectFile:UI:TitleBar]
-// [IMinimize, R:ProjectFile:UI:HotKeys]
+[IHide, Quicksave]
+[IHide, DefaultZScript]
+[IHide, <Colors]
+[IHide, Colors>]
+[IHide, <Layout]
+[IHide, Layout>]
+[IHide, Unlock]
+[IHide, Menus]
 
 
 
-// settings commented out below are dependant on being in edit mode and creating a polymesh on 
-//startup in order to get into edit mode currently creates an artifact. 
+// //init L menu
+// //[IMinimize, L:, 1]
+[IMinimize, L:Subtool]
+[IMinimize, L:Subtool:Extract]
+[IMinimize, L:Subtool:Insert Mesh]
+[IMinimize, L:Subtool:Unified Skin]
+[IMinimize, L:Subtool:Shadowbox]
+[IMinimize, L:PolyGroup]
+[IMinimize, L:Edgeloop]
+[IMinimize, L:Mask]
+[IMinimize, L:Mirror]
+[IMinimize, L:ReMesh]
+[IMinimize, L:Edit Topology]
+[IMinimize, L:MorphTarget]
+[IMinimize, L:Instanced Geometry]
+[IMaximize, L:ReMesh:Dynamic SubD]
+[IMaximize, L:Subtool:Insert Mesh:IMM Brush]
 
-// // create polyMesh
-[IPress, Color:Clear] //clear the canvas
-// // if, [VarLoad, startupProjectFile, custombuttons_globals, 1], //verify 'startupProjectFile' exists
-// // if, [IExists, [VarLoad, startupProjectFile, custombuttons_globals, 1]],
-// 	// [VarLoad, startupProjectFile, custombuttons_globals]
-// 	// [FileNameSetNext, startupProjectFile]
-// 	// [IPress, Tool:Load Tool]
-// 	// ,
-// 	[IPress, Tool:PolyMesh3D]
-// 	// [CanvasStroke, (ZObjStrokeV02n78=H2EEV19CH2EEV19DH2EEV19EH2EEV19FH2EEV1A0H2EEV1A1H2EEV1A3H2EEV1A4H2EEV1A5H2EEV1A7H2EEV1A8H2EEV1A9H2EEV1ABH2EEV1ACH2EEV1ADH2EEV1AEH2EEV1AFH2EEV1B0H2EEV1B1H2EEV1B3H2EEV1B4H2EEV1B5H2EEV1B6H2EEV1B7H2EEV1B8H2EEV1B9H2EEV1BCH2EEV1BDH2EEV1BEH2EEV1BFH2EDV1BFH2EDV1C0H2EDV1C1H2EDV1C2H2EDV1C4H2EDV1C5H2EDV1C6H2EDV1C7H2EDV1C8H2EDV1C9H2EDV1CAH2EDV1CCH2EDV1CDH2EDV1CEH2EDV1CFH2EDV1D0H2EDV1D1H2EDV1D2H2EDV1D4H2EDV1D5H2ECV1D5H2ECV1D6H2ECV1D7H2ECV1D8H2ECV1D9H2ECV1DAH2ECV1DBH2ECV1DDH2ECV1DEH2ECV1DFH2ECV1E0H2ECV1E1H2ECV1E2H2ECV1E3H2ECV1E5H2ECV1E6H2ECV1E7H2ECV1E8H2EAV1E9YH2EEV1E9K1XH2EEv1E7FFH2EEV1EAH2EEV1EBH2EEV1EDH2EEV1EEH2EEV1EFH2EEV1F0H2EEV1F0)]
-// 	[ISet, Transform: Edit, 1]
-// 	[IPress, Tool:Initialize:QCube] //[IPress, Tool:Initialize:QGrid]
-
+// // init R menu
+// //[IMinimize, R:, 1]
+[IMinimize, R:Brush Options]
+[IMinimize, R:Curve]
+[IMinimize, R:Symmetry]
+[IMinimize, R:Viewport]
+[IMinimize, R:Surface]
+[IMinimize, R:Texturing]
+[IMinimize, R:Sketch]
+[IMinimize, R:Scene]
+[IMinimize, R:Brush]
+[IMinimize, R:Transpose]
+[IMaximize, R:Maps:Texture:Create]
+[IMinimize, R:ProjectFile:UI]
+[IMinimize, R:ProjectFile:UI:TitleBar]
+[IMinimize, R:ProjectFile:UI:HotKeys]
 
 
 // // init Tool menu
@@ -141,6 +134,35 @@ If, [MemGetSize, tk_startup_memBlock], //returns 1 or greater if memory block ex
 // //[IPress, Tool:R] //reset tool menu cache
 
 
+
+
+// settings commented out below are dependant on being in edit mode and creating a polymesh on 
+//startup in order to get into edit mode currently creates an artifact. 
+
+// // create polyMesh
+[IPress, Color:Clear] //clear the canvas
+// // if, [VarLoad, startupProjectFile, custombuttons_globals, 1], //verify 'startupProjectFile' exists
+// // if, [IExists, [VarLoad, startupProjectFile, custombuttons_globals, 1]],
+// 	// [VarLoad, startupProjectFile, custombuttons_globals]
+// 	// [FileNameSetNext, startupProjectFile]
+// 	// [IPress, Tool:Load Tool]
+// 	// ,
+// 	[IPress, Tool:PolyMesh3D]
+// 	// [CanvasStroke, (ZObjStrokeV02n78=H2EEV19CH2EEV19DH2EEV19EH2EEV19FH2EEV1A0H2EEV1A1H2EEV1A3H2EEV1A4H2EEV1A5H2EEV1A7H2EEV1A8H2EEV1A9H2EEV1ABH2EEV1ACH2EEV1ADH2EEV1AEH2EEV1AFH2EEV1B0H2EEV1B1H2EEV1B3H2EEV1B4H2EEV1B5H2EEV1B6H2EEV1B7H2EEV1B8H2EEV1B9H2EEV1BCH2EEV1BDH2EEV1BEH2EEV1BFH2EDV1BFH2EDV1C0H2EDV1C1H2EDV1C2H2EDV1C4H2EDV1C5H2EDV1C6H2EDV1C7H2EDV1C8H2EDV1C9H2EDV1CAH2EDV1CCH2EDV1CDH2EDV1CEH2EDV1CFH2EDV1D0H2EDV1D1H2EDV1D2H2EDV1D4H2EDV1D5H2ECV1D5H2ECV1D6H2ECV1D7H2ECV1D8H2ECV1D9H2ECV1DAH2ECV1DBH2ECV1DDH2ECV1DEH2ECV1DFH2ECV1E0H2ECV1E1H2ECV1E2H2ECV1E3H2ECV1E5H2ECV1E6H2ECV1E7H2ECV1E8H2EAV1E9YH2EEV1E9K1XH2EEv1E7FFH2EEV1EAH2EEV1EBH2EEV1EDH2EEV1EEH2EEV1EFH2EEV1F0H2EEV1F0)]
+// 	[ISet, Transform: Edit, 1]
+// 	[IPress, Tool:Initialize:QCube] //[IPress, Tool:Initialize:QGrid]
+
+
+
+
+
+// scene settings
+[IPress, Material:MatCap White Cavity]
+[IPress, Transform: Pf]
+[IPress, Transform: Lsym]
+
+
+
 // // tool settings
 // [ISet, Transform:Activate Symmetry, 1]
 // [ISet, Transform:RadialCount, 6]
@@ -148,7 +170,7 @@ If, [MemGetSize, tk_startup_memBlock], //returns 1 or greater if memory block ex
 [IPress, Brush:ZModeler]
 [IPress, Brush:MaskRect]
 [IPress, Brush:SelectRect]
-[ISet, Preferences:Undo History:Max Undo History, 150]
+
 
 
 

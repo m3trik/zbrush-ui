@@ -7,8 +7,14 @@
 
 #except
 !.gitignore
-!customButtons.zsc
-!testScript.zsc
+!tk_zbrush
+!tk_zbrush.txt
+!tk_zbrush.zsc
+!tk_zbrush_testScript.txt
+!tk_zbrush_testScript.zsc
+!DefaultZScript.txt
+!tk_hotkeys_2.4.txt
+!tk_ui_8.19.cfg
 
 
 #ignore subdirectories
