@@ -5,6 +5,16 @@
 [ISubPalette,"ZPlugin:customButtons"]
 
 
+
+
+
+
+
+
+
+
+
+
 //BUTTONS___________________________________________________________________________________
 
 /*
@@ -128,7 +138,7 @@ NonZero:Specified width), Optional hotkey, Optional button icon
 	[VarSet, goZ, "Tool:GoZ"]
     [HotKeyText, goZ]
 	[If, [IExists, goZ],
-        [IPress, Tool:Geometry:Optimize Points Order]
+        [IPress, "Tool:Geometry:Optimize Points Order"]
 		[IPress, goZ]
 	]
 	,,19
@@ -422,8 +432,8 @@ NonZero:Specified width), Optional hotkey, Optional button icon
 */
 [IButton,"ZPlugin:customButtons:MaskByCrease",
 	"Mask by Crease (Tool:Masking:MaskByFeature)",
-	[IUnPress, Tool:Masking:Border]
-	[IUnPress, Tool:Masking:Groups]
+	[IUnPress, "Tool:Masking:Border"]
+	[IUnPress, "Tool:Masking:Groups"]
 	[VarSet, buttonPath, "Tool:Masking:MaskByFeature"]
     [HotKeyText, buttonPath]
 	[If,[IExists, buttonPath],
@@ -434,7 +444,7 @@ NonZero:Specified width), Optional hotkey, Optional button icon
 
 [IButton,"ZPlugin:customButtons:Weld",
 	"Weld Points 1px(Tool:Geometry:WeldPoints)", 
-	[ISet, Tool:Geometry:WeldDist, 1]
+	[ISet, "Tool:Geometry:WeldDist", 1]
 	[VarSet, buttonPath, "Tool:Geometry:WeldPoints"]
     [HotKeyText, buttonPath]
 	[If,[IExists, buttonPath],
@@ -449,14 +459,14 @@ NonZero:Specified width), Optional hotkey, Optional button icon
 	[MemCreate, "mX", 36, 0]
 	[MVarSet, mX, 0, [IGet, Xpos]]
 	[ISet, Xpos, 0]
-	[IModSet, Tool:Geometry:Delete by Symmetry, 1] 
-	[IPress, Tool:Geometry:Delete by Symmetry]
-	[IPress, Tool:Geometry:Copy]
-	[IModSet, Tool:Deformation:Mirror, 1]
-	[IPress, Tool:Deformation:Mirror]
-	[IPress, Tool:Geometry:Paste Append]
-	[ISet, Tool:Geometry:WeldDist, 5]
-	[IPress, Tool:Geometry:WeldPoints]
+	[IModSet, "Tool:Geometry:Delete by Symmetry", 1] 
+	[IPress, "Tool:Geometry:Delete by Symmetry"]
+	[IPress, "Tool:Geometry:Copy"]
+	[IModSet, "Tool:Deformation:Mirror", 1]
+	[IPress, "Tool:Deformation:Mirror"]
+	[IPress, "Tool:Geometry:Paste Append"]
+	[ISet, "Tool:Geometry:WeldDist", 5]
+	[IPress, "Tool:Geometry:WeldPoints"]
 	[VarSet, X, [MVarGet, mX,]]
 	[ISet, Xpos, X]
 	[MemDelete, "mX"] 
@@ -469,14 +479,14 @@ NonZero:Specified width), Optional hotkey, Optional button icon
 	[MemCreate, "mX", 36, 0]
 	[MVarSet, mX, 0, [IGet, Xpos]]
 	[ISet, Xpos, 0]
-	[IPress, Tool:Geometry:Copy]
-	[IModSet, Tool:Deformation:Mirror,1]
-	[IPress, Tool:Deformation:Mirror]
+	[IPress, "Tool:Geometry:Copy"]
+	[IModSet, "Tool:Deformation:Mirror",1]
+	[IPress, "Tool:Deformation:Mirror"]
 	[VarSet, Xsize, [IGet, "Tool:Geometry:X Size"]] 
 	[ISet, Xpos, Xpos - Xsize] //mirror from right to left
-	[IPress, Tool:Geometry:Paste Append]
-	[ISet, Tool:Geometry:WeldDist, 5]
-	[IPress, Tool:Geometry:WeldPoints]
+	[IPress, "Tool:Geometry:Paste Append"]
+	[ISet, "Tool:Geometry:WeldDist", 5]
+	[IPress, "Tool:Geometry:WeldPoints"]
 	[VarSet, X, [MVarGet, mX,]]
 	[ISet, Xpos, X - (Xsize/2)]
 	[MemDelete, "mX"] 
@@ -489,14 +499,14 @@ NonZero:Specified width), Optional hotkey, Optional button icon
 	[MemCreate, "mY", 36, 0]
 	[MVarSet, mY, 0, [IGet, Ypos]]
 	[ISet, Ypos, 0]
-	[IPress, Tool:Geometry:Copy]
-	[IModSet,Tool:Deformation:Mirror, 2]
-	[IPress, Tool:Deformation:Mirror]
+	[IPress, "Tool:Geometry:Copy"]
+	[IModSet, "Tool:Deformation:Mirror", 2]
+	[IPress, "Tool:Deformation:Mirror"]
 	[VarSet, Ysize, [IGet, "Tool:Geometry:Y Size"]] 
 	[ISet, Ypos, Ypos + Ysize] //mirror from top to bottom
-	[IPress, Tool:Geometry:Paste Append]
-	[ISet, Tool:Geometry:WeldDist, 5]
-	[IPress, Tool:Geometry:WeldPoints]
+	[IPress, "Tool:Geometry:Paste Append"]
+	[ISet, "Tool:Geometry:WeldDist", 5]
+	[IPress, "Tool:Geometry:WeldPoints"]
 	[VarSet, Y, [MVarGet, mY,]]
 	[ISet, Ypos, Y + (Ysize/2)]
 	[MemDelete, "mY"]
@@ -509,14 +519,14 @@ NonZero:Specified width), Optional hotkey, Optional button icon
 	[MemCreate, "mZ", 36, 0]
 	[MVarSet, mZ, 0, [IGet, Zpos]]
 	[ISet, Zpos, 0]  
-	[IPress, Tool:Geometry:Copy]
-	[IModSet, Tool:Deformation:Mirror, 4]
-	[IPress, Tool:Deformation:Mirror]
+	[IPress, "Tool:Geometry:Copy"]
+	[IModSet, "Tool:Deformation:Mirror", 4]
+	[IPress, "Tool:Deformation:Mirror"]
 	[VarSet, Zsize, [IGet, "Tool:Geometry:Z Size"]] 
 	[ISet, Zpos, Zpos - Zsize] //mirror from back to front
-	[IPress,Tool:Geometry:Paste Append]
-	[ISet, Tool:Geometry:WeldDist, 5]
-	[IPress,Tool:Geometry:WeldPoints]
+	[IPress, "Tool:Geometry:Paste Append"]
+	[ISet, "Tool:Geometry:WeldDist", 5]
+	[IPress, "Tool:Geometry:WeldPoints"]
 	[VarSet, Z, [MVarGet, mZ,]]
 	[ISet, Zpos, Z - (Zsize/2)]
 	[MemDelete, "mZ"] 
@@ -525,8 +535,8 @@ NonZero:Specified width), Optional hotkey, Optional button icon
 
 [IButton,"ZPlugin:customButtons:Cut",
 	"Copy & Delete Subtool", 
-	[IPress, Tool:Subtool:Copy]
-	[IPress, Tool:Subtool:Delete]
+	[IPress, "Tool:Subtool:Copy"]
+	[IPress, "Tool:Subtool:Delete"]
 	,,60
 ]
 
@@ -539,7 +549,7 @@ NonZero:Specified width), Optional hotkey, Optional button icon
 
 [IButton,"ZPlugin:customButtons:HideMasked",
 	"Hide Masked Polygons (Tool:Masking:Inverse)(Tool:Visibliity:HidePt)", 
-	[IPress, Tool:Masking:Inverse]
+	[IPress, "Tool:Masking:Inverse"]
 	[VarSet, buttonPath, "Tool:Visibliity:HidePt"]
 	[HotKeyText, buttonPath]
 	[If, [IExists, buttonPath],
@@ -549,17 +559,17 @@ NonZero:Specified width), Optional hotkey, Optional button icon
 ]
 
 [IButton,"ZPlugin:customButtons:0xyz",
-	"Center Subtool" (Tool:Geometry:),
-	[ISet, Tool:Geometry:X position, 0]
-	[ISet, Tool:Geometry:Y position, 0]
-	[ISet, Tool:Geometry:Z position, 0] 
+	"Center Subtool (Tool:Geometry:)",
+	[ISet, "Tool:Geometry:X position", 0]
+	[ISet, "Tool:Geometry:Y position", 0]
+	[ISet, "Tool:Geometry:Z position", 0] 
 	,,40
 ]
 
 [IButton,"ZPlugin:customButtons:45 X",
 	"Rotate Subtool 45* X axis (Tool:Deformation:Rotate)",
-	[IModSet, Tool:Deformation:Rotate, 1]
-	[ISet, Tool:Deformation:Rotate, 45]
+	[IModSet, "Tool:Deformation:Rotate", 1]
+	[ISet, "Tool:Deformation:Rotate", 45]
 	[VarSet, buttonPath, "Tool:Deformation:Rotate"]
     [HotKeyText, buttonPath]
 	[If,[IExists, buttonPath],
@@ -570,8 +580,8 @@ NonZero:Specified width), Optional hotkey, Optional button icon
 
 [IButton,"ZPlugin:customButtons:45 Y",
 	"Rotate Subtool 45* Y axis (Tool:Deformation:Rotate)",
-	[IModSet, Tool:Deformation:Rotate, 2]
-	[ISet, Tool:Deformation:Rotate, 45]
+	[IModSet, "Tool:Deformation:Rotate", 2]
+	[ISet, "Tool:Deformation:Rotate", 45]
 	[VarSet, buttonPath, "Tool:Deformation:Rotate"]
     [HotKeyText, buttonPath]
 	[If,[IExists, buttonPath],
@@ -582,8 +592,8 @@ NonZero:Specified width), Optional hotkey, Optional button icon
 
 [IButton,"ZPlugin:customButtons:45 Z",
 	"Rotate Subtool 45* Z axis (Tool:Deformation:Rotate)",
-	[IModSet, Tool:Deformation:Rotate, 4]
-	[ISet, Tool:Deformation:Rotate, 45]
+	[IModSet, "Tool:Deformation:Rotate", 4]
+	[ISet, "Tool:Deformation:Rotate", 45]
 	[VarSet, buttonPath, "Tool:Deformation:Rotate"]
 	[HotKeyText, buttonPath]
 	[If, [IExists, buttonPath],
@@ -594,8 +604,8 @@ NonZero:Specified width), Optional hotkey, Optional button icon
 
 [IButton,"ZPlugin:customButtons:RestoreView",
 	"(Edit:Tool:Restore Placement)",
-	[ISet, Edit:Tool:Restore Placement, 0]
-	[IPress, Edit:Tool:Restore Placement]
+	[ISet, "Edit:Tool:Restore Placement", 0]
+	[IPress, "Edit:Tool:Restore Placement"]
 	,,77
 ]
 
@@ -618,7 +628,7 @@ NonZero:Specified width), Optional hotkey, Optional button icon
 	]
 	,,19
 ]
-
+/* Replaced with switches
 [IButton,"ZPlugin:customButtons:d1",
 	"Dynamic Subdivide Level 1", 
 	[ISet, Tool:Geometry:s.SmoothSubdiv, 1]
@@ -637,6 +647,12 @@ NonZero:Specified width), Optional hotkey, Optional button icon
 	,,19
 ]
 
+[IButton,"ZPlugin:customButtons:d4",
+	"Dynamic Subdivide Level 4", 
+	[ISet, Tool:Geometry:s.SmoothSubdiv, 4]
+	,,19
+]
+*/
 [IButton,"ZPlugin:customButtons:fSubD",
 	"Freeze Subdivision Levels (Tool:Geometry:Freeze Subdivision Levels)", 
 	[VarSet, buttonPath, "Tool:Geometry:Freeze Subdivision Levels"]
@@ -649,8 +665,8 @@ NonZero:Specified width), Optional hotkey, Optional button icon
 
 [IButton,"ZPlugin:customButtons:1x",
 	"Rotate Subtool 1* X axis (Tool:Deformation:Rotate)",
-	[IModSet, Tool:Deformation:Rotate, 1]
-	[ISet, Tool:Deformation:Rotate, 1]
+	[IModSet, "Tool:Deformation:Rotate", 1]
+	[ISet, "Tool:Deformation:Rotate", 1]
 	[VarSet, buttonPath, "Tool:Deformation:Rotate"]
     [HotKeyText, buttonPath]
 	[If, [IExists, buttonPath],
@@ -661,8 +677,8 @@ NonZero:Specified width), Optional hotkey, Optional button icon
 
 [IButton,"ZPlugin:customButtons:1y",
 	"Rotate Subtool 1* Y axis (Tool:Deformation:Rotate)",
-	[IModSet, Tool:Deformation:Rotate, 2]
-	[ISet, Tool:Deformation:Rotate, 1]
+	[IModSet, "Tool:Deformation:Rotate", 2]
+	[ISet, "Tool:Deformation:Rotate", 1]
 	[VarSet, buttonPath, "Tool:Deformation:Rotate"]
     [HotKeyText, buttonPath]
 	[If, [IExists, buttonPath],
@@ -673,8 +689,8 @@ NonZero:Specified width), Optional hotkey, Optional button icon
 
 [IButton,"ZPlugin:customButtons:1z",
 	"Rotate Subtool 1* Z axis (Tool:Deformation:Rotate)",
-	[IModSet, Tool:Deformation:Rotate, 4]
-	[ISet, Tool:Deformation:Rotate, 1]
+	[IModSet, "Tool:Deformation:Rotate", 4]
+	[ISet, "Tool:Deformation:Rotate", 1]
 	[VarSet, buttonPath, "Tool:Deformation:Rotate"]
     [HotKeyText, buttonPath]
 	[If, [IExists, buttonPath],
@@ -685,8 +701,8 @@ NonZero:Specified width), Optional hotkey, Optional button icon
 
 [IButton,"ZPlugin:customButtons:-1x",
 	"Rotate Subtool -1* X axis (Tool:Deformation:Rotate)",
-	[IModSet, Tool:Deformation:Rotate, 1]
-	[ISet, Tool:Deformation:Rotate, 1]
+	[IModSet, "Tool:Deformation:Rotate", 1]
+	[ISet, "Tool:Deformation:Rotate", 1]
 	[VarSet, buttonPath, "Tool:Deformation:Rotate"]
     [HotKeyText, buttonPath]
 	[If, [IExists, buttonPath],
@@ -697,8 +713,8 @@ NonZero:Specified width), Optional hotkey, Optional button icon
 
 [IButton,"ZPlugin:customButtons:-1y",
 	"Rotate Subtool -1* Y axis (Tool:Deformation:Rotate)",
-	[IModSet, Tool:Deformation:Rotate, 2]
-	[ISet, Tool:Deformation:Rotate, 1]
+	[IModSet, "Tool:Deformation:Rotate", 2]
+	[ISet, "Tool:Deformation:Rotate", 1]
 	[VarSet, buttonPath, "Tool:Deformation:Rotate"]
 	[HotKeyText, buttonPath]
 	[If, [IExists, buttonPath],
@@ -709,8 +725,8 @@ NonZero:Specified width), Optional hotkey, Optional button icon
 
 [IButton,"ZPlugin:customButtons:-1z",
 	"Rotate Subtool -1* Z axis (Tool:Deformation:Rotate)",
-	[IModSet, Tool:Deformation:Rotate, 4]
-	[ISet, Tool:Deformation:Rotate, 1]
+	[IModSet, "Tool:Deformation:Rotate", 4]
+	[ISet, "Tool:Deformation:Rotate", 1]
 	[VarSet, buttonPath, "Tool:Deformation:Rotate"]
     [HotKeyText, buttonPath]
 	[If, [IExists, buttonPath],
@@ -865,14 +881,14 @@ NonZero:Specified width), Optional hotkey, Optional button icon
 	[MemCreate, "mX", 36, 0]
 	[MVarSet, mX, 0, [IGet, Xpos]]
 	[ISet, Xpos, 0]
-	[IPress, Tool:Geometry:Copy]
-	[IModSet, Tool:Deformation:Mirror, 1]
-	[IPress, Tool:Deformation:Mirror]
+	[IPress, "Tool:Geometry:Copy"]
+	[IModSet, "Tool:Deformation:Mirror", 1]
+	[IPress, "Tool:Deformation:Mirror"]
 	[VarSet, Xsize, [IGet, "Tool:Geometry:X Size"]] 
 	[ISet, Xpos, Xpos - Xsize] //mirror from left to right
-	[IPress, Tool:Geometry:Paste Append]
-	[ISet, Tool:Geometry:WeldDist, 5]
-	[IPress, Tool:Geometry:WeldPoints]
+	[IPress, "Tool:Geometry:Paste Append"]
+	[ISet, "Tool:Geometry:WeldDist", 5]
+	[IPress, "Tool:Geometry:WeldPoints"]
 	[VarSet, X, [MVarGet, mX,]]
 	[ISet, Xpos, X - (Xsize/2)]
 	[MemDelete, "mX"] 
@@ -885,14 +901,14 @@ NonZero:Specified width), Optional hotkey, Optional button icon
 	[MemCreate, "mY", 36, 0]
 	[MVarSet, mY, 0, [IGet, Ypos]]
 	[ISet, Ypos, 0]
-	[IPress,Tool:Geometry:Copy]
-	[IModSet, Tool:Deformation:Mirror, 2]
-	[IPress, Tool:Deformation:Mirror]
+	[IPress, "Tool:Geometry:Copy"]
+	[IModSet, "Tool:Deformation:Mirror", 2]
+	[IPress, "Tool:Deformation:Mirror"]
 	[VarSet, Ysize, [IGet, "Tool:Geometry:Y Size"]] 
 	[ISet, Ypos, Ypos - Ysize] //mirror from bottom to top
-	[IPress, Tool:Geometry:Paste Append]
-	[ISet, Tool:Geometry:WeldDist, 5]
-	[IPress, Tool:Geometry:WeldPoints]
+	[IPress, "Tool:Geometry:Paste Append"]
+	[ISet, "Tool:Geometry:WeldDist", 5]
+	[IPress, "Tool:Geometry:WeldPoints"]
 	[VarSet, Y, [MVarGet, mY,]]
 	[ISet, Ypos, Y - (Ysize/2)]
 	[MemDelete, "mY"]
@@ -905,14 +921,14 @@ NonZero:Specified width), Optional hotkey, Optional button icon
 	[MemCreate, "mZ", 36, 0]
 	[MVarSet, mZ, 0, [IGet, Zpos]]
 	[ISet, Zpos, 0]  
-	[IPress, Tool:Geometry:Copy]
-	[IModSet,Tool:Deformation:Mirror, 4]
-	[IPress, Tool:Deformation:Mirror]
+	[IPress, "Tool:Geometry:Copy"]
+	[IModSet, "Tool:Deformation:Mirror", 4]
+	[IPress, "Tool:Deformation:Mirror"]
 	[VarSet, Zsize, [IGet, "Tool:Geometry:Z Size"]] 
 	[ISet, Zpos, Zpos + Zsize] //mirror from front to back
-	[IPress, Tool:Geometry:Paste Append]
-	[ISet, Tool:Geometry:WeldDist, 5]
-	[IPress, Tool:Geometry:WeldPoints]
+	[IPress, "Tool:Geometry:Paste Append"]
+	[ISet, "Tool:Geometry:WeldDist", 5]
+	[IPress, "Tool:Geometry:WeldPoints"]
 	[VarSet, Z, [MVarGet, mZ,]]
 	[ISet, Zpos, Z + (Zsize/2)]
 	[MemDelete, "mZ"] 
@@ -931,7 +947,7 @@ NonZero:Specified width), Optional hotkey, Optional button icon
 
 [IButton,"ZPlugin:customButtons:w.5",
 	"Weld Points 5px(Tool:Geometry:WeldPoints)", 
-	[ISet, Tool:Geometry:WeldDist, 5]
+	[ISet, "Tool:Geometry:WeldDist", 5]
 	[VarSet, buttonPath, "Tool:Geometry:WeldPoints"]
     [HotKeyText, buttonPath]
 	[If, [IExists, buttonPath],
@@ -941,7 +957,7 @@ NonZero:Specified width), Optional hotkey, Optional button icon
 ]
 
 [IButton,"ZPlugin:customButtons:w.15","Weld Points 15px(Tool:Geometry:WeldPoints)", 
-	[ISet, Tool:Geometry:WeldDist, 15]
+	[ISet, "Tool:Geometry:WeldDist", 15]
 	[VarSet, buttonPath, "Tool:Geometry:WeldPoints"]
     [HotKeyText, buttonPath]
 	[If, [IExists, buttonPath],
@@ -972,8 +988,8 @@ NonZero:Specified width), Optional hotkey, Optional button icon
 
 [IButton,"ZPlugin:customButtons:Unweld Masked Polys",
 	"Unweld Masked Polygons",
-	[IPress, Tool:SubTool:Split:Split Masked Points]
-	[IPress, Tool:SubTool:MergeDown]
+	[IPress, "Tool:SubTool:Split:Split Masked Points"]
+	[IPress, "Tool:SubTool:MergeDown"]
 	,151
 ]
 
@@ -1015,16 +1031,10 @@ NonZero:Specified width), Optional hotkey, Optional button icon
 	,,37
 ]
 
-[IButton,"ZPlugin:customButtons:d4",
-	"Dynamic Subdivide Level 4", 
-	[ISet, Tool:Geometry:s.SmoothSubdiv, 4]
-	,,19
-]
-
 [IButton,"ZPlugin:customButtons:GroupSimilar",
 	"Auto Group & Merge Similar (Tool:Polygroups)", 
-	[IPress, Tool:Polygroups:Auto Groups]
-	[IPress, Tool:Polygroups:Merge Similar Groups]
+	[IPress, "Tool:Polygroups:Auto Groups"]
+	[IPress, "Tool:Polygroups:Merge Similar Groups"]
 	,,75
 ]
 
@@ -1040,9 +1050,30 @@ NonZero:Specified width), Optional hotkey, Optional button icon
 	"Open previously set Project ()",
 	[VarLoad, startupProjectFile, tk_zbrush_globals]
 	[FileNameSetNext, startupProjectFile]
-	[IPress, Tool:Load Tool]
+	[IPress, "Tool:Load Tool"]
 	,,75
 ]
+
+[IButton,"ZPlugin:customButtons:decFocalShift",
+	"Decrement Focal Shift (Draw:Focal Shift)",
+	[VarSet, drawSize, INT([IGet, "Draw:Focal Shift"])]
+	[VarSub, drawSize, 2]//[VarDec, drawSize]
+	[NoteBar, drawSize]
+	[ISet, "Draw:Focal Shift", drawSize]
+	,,19
+]
+
+[IButton,"ZPlugin:customButtons:incFocalShift",
+	"Increment Focal Shift (Draw:Focal Shift)",
+	[VarSet, drawSize, INT([IGet, "Draw:Focal Shift"])]
+	[VarAdd, drawSize, 2]//[VarInc, drawSize]
+	[NoteBar, drawSize]
+	[ISet, "Draw:Focal Shift", drawSize]
+	,,19
+]
+
+
+
 
 
 
@@ -1060,11 +1091,11 @@ pixels (0:AutoWidth NonZero:Specified width)]
 */
 
 
-[ISwitch, "ZPlugin:customButtons:Edit", 1,
+[ISwitch, "ZPlugin:customButtons:Edit", 0,
 	"Edit Mode (Transform:Edit)", 
-	[ISet, Transform:Edit, 1]
+	[ISet, "Transform:Edit", 1]
 	, 
-	[ISet, Transform:Edit, 0]
+	[ISet, "Transform:Edit", 0]
 	,19, 
 ]
 [IEnable, "ZPlugin:customButtons:Edit"]
@@ -1072,10 +1103,10 @@ pixels (0:AutoWidth NonZero:Specified width)]
 
 [ISwitch, "ZPlugin:customButtons:Perspective", 0,
 	"Toggle Perspective Distortion",
-	[IModSet, Draw: Perspective, 1]
-	[ISet, Draw: Perspective, 1]
+	[IModSet, "Draw: Perspective", 1]
+	[ISet, "Draw: Perspective", 1]
 	,
-	[ISet, Draw: Perspective, 0]
+	[ISet, "Draw: Perspective", 0]
 	,75, 
 ]
 [IEnable, "ZPlugin:customButtons:Perspective"]
@@ -1083,9 +1114,9 @@ pixels (0:AutoWidth NonZero:Specified width)]
 
 [ISwitch, "ZPlugin:customButtons:DynaMesh", 0,
 	"DynaMesh (Tool:Geometry:DynaMesh)",
-	[ISet,Tool:Geometry:DynaMesh, 1]
+	[ISet, "Tool:Geometry:DynaMesh", 1]
 	, 
-	[ISet,Tool:Geometry:DynaMesh, 0]
+	[ISet, "Tool:Geometry:DynaMesh", 0]
 	,75, 
 ]
 [IEnable, "ZPlugin:customButtons:DynaMesh"]
@@ -1093,9 +1124,9 @@ pixels (0:AutoWidth NonZero:Specified width)]
 
 [ISwitch, "ZPlugin:customButtons:FiberMesh", 0,
 	"FiberMesh (Tool:FiberMesh:Preview)", 
-	[ISet, Tool:FiberMesh:Preview, 1]
+	[ISet, "Tool:FiberMesh:Preview", 1]
 	,
-	[ISet, Tool:FiberMesh:Preview, 0]
+	[ISet, "Tool:FiberMesh:Preview", 0]
 	,75,
 ]
 [IEnable, "ZPlugin:customButtons:FiberMesh"]
@@ -1103,9 +1134,9 @@ pixels (0:AutoWidth NonZero:Specified width)]
 
 [ISwitch, "ZPlugin:customButtons:Symmetry", 1,
 	"Activate Symmetry (Transform:Activate Symmetry)", 
-	[ISet, Transform:Activate Symmetry, 1]
+	[ISet, "Transform:Activate Symmetry", 1]
 	,
-	[ISet, Transform:Activate Symmetry, 0]
+	[ISet, "Transform:Activate Symmetry", 0]
 	,75, 
 ]
 [IEnable, "ZPlugin:customButtons:Symmetry"]
@@ -1126,11 +1157,11 @@ pixels (0:AutoWidth NonZero:Specified width)]
 
 [ISwitch, "ZPlugin:customButtons:CenterSquare", 0,
 	"Drag from Center & Keep Square (Stroke:Center) (Stroke:Square)", 
-	[ISet, Stroke:Center, 1]
-	[ISet, Stroke:Square, 1]
+	[ISet, "Stroke:Center", 1]
+	[ISet, "Stroke:Square", 1]
 	, 
-	[ISet, Stroke:Center, 0]
-	[ISet, Stroke:Square, 0]
+	[ISet, "Stroke:Center", 0]
+	[ISet, "Stroke:Square", 0]
 	,75, 
 ]
 [IEnable, "ZPlugin:customButtons:CenterSquare"]
@@ -1138,9 +1169,9 @@ pixels (0:AutoWidth NonZero:Specified width)]
 
 [ISwitch, "ZPlugin:customButtons:Magnify", 0,
 	"Magnify Glass (Preferences:Magnify Glass:MagnifyGlass)", 
-	[ISet, Preferences:Magnify Glass:MagnifyGlass, 1]
+	[ISet, "Preferences:Magnify Glass:MagnifyGlass", 1]
 	,
-	[ISet, Preferences:Magnify Glass:MagnifyGlass, 0]
+	[ISet, "Preferences:Magnify Glass:MagnifyGlass", 0]
 	,75, 
 ]
 [IEnable, "ZPlugin:customButtons:Magnify"]
@@ -1148,9 +1179,9 @@ pixels (0:AutoWidth NonZero:Specified width)]
 
 [ISwitch, "ZPlugin:customButtons:AutoMask", 0,
 	"Auto Mask By Polygroups (Brush:Auto Masking:Mask By Polygroups)", 
-	[ISet, Brush:Auto Masking:Mask By Polygroups, 100]
+	[ISet, "Brush:Auto Masking:Mask By Polygroups", 100]
 	, 
-	[ISet, Brush:Auto Masking:Mask By Polygroups, 0]
+	[ISet, "Brush:Auto Masking:Mask By Polygroups", 0]
 	,75, 
 ]
 [IEnable, "ZPlugin:customButtons:AutoMask"]
@@ -1158,93 +1189,93 @@ pixels (0:AutoWidth NonZero:Specified width)]
 
 [ISwitch, "ZPlugin:customButtons:MinTP", 0,
 	"Toggle Minimal Tool Palette",
-	[IHide, Tool:Geometry]
-	[IHide, Tool:ArrayMesh]
-	[IHide, Tool:NanoMesh]
-	[IHide, Tool:Layers]
-	[IHide, Tool:FiberMesh]
-	[IHide, Tool:GeometryHD]
-	[IHide, Tool:Preview]
-	[IHide, Tool:Surface]
-	[IHide, Tool:Deformation]
-	[IHide, Tool:Masking]
-	[IHide, Tool:Visibility]
-	[IHide, Tool:Polygroups]
-	[IHide, Tool:Contact]
-	[IHide, Tool:MorphTarget]
-	[IHide, Tool:PolyPaint]
-	[IHide, Tool:UVMap]
-	[IHide, Tool:TextureMap]
-	[IHide, Tool:DisplacementMap]
-	[IHide, Tool:NormalMap]
-	[IHide, Tool:VectorDisplacementMap]
-	[IHide, Tool:DisplayProperties]
-	[IHide, Tool:UnifiedSkin]
-	[IHide, Tool:Initialize]
-	[IHide, Tool:Import]
-	[IHide, Tool:Export]
-	[IHide, Tool:LoadTool]
-	[IHide, Tool:SaveAs]
-	[IHide, Tool:CopyTool]
-	[IHide, Tool:PasteTool]
-	[IHide, Tool:Clone]
-	[IHide, Tool:MakePolyMesh3D]
-	[IHide, Tool:GoZ]
-	[IHide, Tool:All]
-	[IHide, Tool:Visible]
-	[IHide, Tool:R]
-	[IHide, Tool:LoadTool]
-	[IHide, Tool:SaveAs]
-	[IHide, Tool:CopyTool]
-	[IHide, Tool:PasteTool]
-	[IHide, Tool:Clone]
-	[IHide, Tool:MakePolyMesh3D]
-	[IHide, Tool:GoZ]
-	[IHide, Tool:All]
-	[IHide, Tool:Visible]
-	//[IPress,Tool:R]
-	[IHide, Tool:R]
-	[IHide, Tool:SubTool:Copy]
-	[IHide, Tool:SubTool:Paste]
-	[IHide, Tool:SubTool:Duplicate]
-	[IHide, Tool:SubTool:Append]
-	[IHide, Tool:SubTool:Insert]
+	[IHide, "Tool:Geometry"]
+	[IHide, "Tool:ArrayMesh"]
+	[IHide, "Tool:NanoMesh"]
+	[IHide, "Tool:Layers"]
+	[IHide, "Tool:FiberMesh"]
+	[IHide, "Tool:GeometryHD"]
+	[IHide, "Tool:Preview"]
+	[IHide, "Tool:Surface"]
+	[IHide, "Tool:Deformation"]
+	[IHide, "Tool:Masking"]
+	[IHide, "Tool:Visibility"]
+	[IHide, "Tool:Polygroups"]
+	[IHide, "Tool:Contact"]
+	[IHide, "Tool:MorphTarget"]
+	[IHide, "Tool:PolyPaint"]
+	[IHide, "Tool:UVMap"]
+	[IHide, "Tool:TextureMap"]
+	[IHide, "Tool:DisplacementMap"]
+	[IHide, "Tool:NormalMap"]
+	[IHide, "Tool:VectorDisplacementMap"]
+	[IHide, "Tool:DisplayProperties"]
+	[IHide, "Tool:UnifiedSkin"]
+	[IHide, "Tool:Initialize"]
+	[IHide, "Tool:Import"]
+	[IHide, "Tool:Export"]
+	[IHide, "Tool:LoadTool"]
+	[IHide, "Tool:SaveAs"]
+	[IHide, "Tool:CopyTool"]
+	[IHide, "Tool:PasteTool"]
+	[IHide, "Tool:Clone"]
+	[IHide, "Tool:MakePolyMesh3D"]
+	[IHide, "Tool:GoZ"]
+	[IHide, "Tool:All"]
+	[IHide, "Tool:Visible"]
+	[IHide, "Tool:R"]
+	[IHide, "Tool:LoadTool"]
+	[IHide, "Tool:SaveAs"]
+	[IHide, "Tool:CopyTool"]
+	[IHide, "Tool:PasteTool"]
+	[IHide, "Tool:Clone"]
+	[IHide, "Tool:MakePolyMesh3D"]
+	[IHide, "Tool:GoZ"]
+	[IHide, "Tool:All"]
+	[IHide, "Tool:Visible"]
+	//[IPress,"Tool:R"]
+	[IHide, "Tool:R"]
+	[IHide, "Tool:SubTool:Copy"]
+	[IHide, "Tool:SubTool:Paste"]
+	[IHide, "Tool:SubTool:Duplicate"]
+	[IHide, "Tool:SubTool:Append"]
+	[IHide, "Tool:SubTool:Insert"]
 	,
-	[IShow, Tool:Geometry]
-	[IShow, Tool:ArrayMesh]
-	[IShow, Tool:NanoMesh]
-	[IShow, Tool:Layers]
-	[IShow, Tool:FiberMesh]
-	[IShow, Tool:GeometryHD]
-	[IShow, Tool:Preview]
-	[IShow, Tool:Surface]
-	[IShow, Tool:Deformation]
-	[IShow, Tool:Masking]
-	[IShow, Tool:Visibility]
-	[IShow, Tool:Polygroups]
-	[IShow, Tool:Contact]
-	[IShow, Tool:MorphTarget]
-	[IShow, Tool:PolyPaint]
-	[IShow, Tool:UVMap]
-	[IShow, Tool:TextureMap]
-	[IShow, Tool:DisplacementMap]
-	[IShow, Tool:NormalMap]
-	[IShow, Tool:VectorDisplacementMap]
-	[IShow, Tool:DisplayProperties]
-	[IShow, Tool:UnifiedSkin]
-	[IShow, Tool:Initialize]
-	[IShow, Tool:Import]
-	[IShow, Tool:Export]
-	[IShow, Tool:LoadTool]
-	[IShow, Tool:SaveAs]
-	[IShow, Tool:CopyTool]
-	[IShow, Tool:PasteTool]
-	[IShow, Tool:Clone]
-	[IShow, Tool:MakePolyMesh3D]
-	[IShow, Tool:GoZ]
-	[IShow, Tool:All]
-	[IShow, Tool:Visible]
-	[IShow, Tool:R]
+	[IShow, "Tool:Geometry"]
+	[IShow, "Tool:ArrayMesh"]
+	[IShow, "Tool:NanoMesh"]
+	[IShow, "Tool:Layers"]
+	[IShow, "Tool:FiberMesh"]
+	[IShow, "Tool:GeometryHD"]
+	[IShow, "Tool:Preview"]
+	[IShow, "Tool:Surface"]
+	[IShow, "Tool:Deformation"]
+	[IShow, "Tool:Masking"]
+	[IShow, "Tool:Visibility"]
+	[IShow, "Tool:Polygroups"]
+	[IShow, "Tool:Contact"]
+	[IShow, "Tool:MorphTarget"]
+	[IShow, "Tool:PolyPaint"]
+	[IShow, "Tool:UVMap"]
+	[IShow, "Tool:TextureMap"]
+	[IShow, "Tool:DisplacementMap"]
+	[IShow, "Tool:NormalMap"]
+	[IShow, "Tool:VectorDisplacementMap"]
+	[IShow, "Tool:DisplayProperties"]
+	[IShow, "Tool:UnifiedSkin"]
+	[IShow, "Tool:Initialize"]
+	[IShow, "Tool:Import"]
+	[IShow, "Tool:Export"]
+	[IShow, "Tool:LoadTool"]
+	[IShow, "Tool:SaveAs"]
+	[IShow, "Tool:CopyTool"]
+	[IShow, "Tool:PasteTool"]
+	[IShow, "Tool:Clone"]
+	[IShow, "Tool:MakePolyMesh3D"]
+	[IShow, "Tool:GoZ"]
+	[IShow, "Tool:All"]
+	[IShow, "Tool:Visible"]
+	[IShow, "Tool:R"]
 	,,37
 ]
 [IEnable, "ZPlugin:customButtons:MinTP"]
@@ -1252,14 +1283,14 @@ pixels (0:AutoWidth NonZero:Specified width)]
 
 [ISwitch, "ZPlugin:customButtons:Dynamic", 0,
 	"Preview Dynamic Subd, Polyframe Off, Mask Off", 
-	[ISet,   Transform:Pf, 0] 
-	[ISet,   Tool:Geometry:s.Dynamic, 1]
-	[ISet,   Tool:Masking:View Mask, 0]
+	[ISet,   "Transform:Pf", 0] 
+	[ISet,   "Tool:Geometry:s.Dynamic", 1]
+	[ISet,   "Tool:Masking:View Mask", 0]
 	,
-	[IModSet,Transform: Pf, 3]
-	[ISet,   Transform:Pf, 1] 
-	[ISet,   Tool:Geometry:s.Dynamic, 0]
-	[ISet,   Tool:Masking:View Mask, 1]
+	[IModSet, "Transform:Pf", 3]
+	[ISet, "Transform:Pf", 1] 
+	[ISet, "Tool:Geometry:s.Dynamic", 0]
+	[ISet, "Tool:Masking:View Mask", 1]
 	,75, 
 ]
 [IEnable, "ZPlugin:customButtons:Dynamic"]
@@ -1267,10 +1298,10 @@ pixels (0:AutoWidth NonZero:Specified width)]
 
 [ISwitch, "ZPlugin:customButtons:PolyFrame", 1,
 	"Toggle Polyframe", 
-	[IModSet,Transform: Pf, 1]
-	[ISet,Transform: Pf, 1]
+	[IModSet, "Transform:Pf", 1]
+	[ISet, "Transform:Pf", 1]
 	,
-	[ISet,Transform: Pf, 0]
+	[ISet, "Transform:Pf", 0]
 	,75, 
 ]
 [IEnable, "ZPlugin:customButtons:PolyFrame"]
@@ -1278,18 +1309,18 @@ pixels (0:AutoWidth NonZero:Specified width)]
 
 [ISwitch, "ZPlugin:customButtons:M", 1,
 	"Toggle Mesh Visibility",
-	[VarSet, ModState, [IModGet, Transform: Pf]]
+	[VarSet, ModState, [IModGet, "Transform:Pf"]]
 	[If, ModState = 0,//If all off                     
-		[IModSet, Transform: Pf, 1]//pf on 
+		[IModSet, "Transform:Pf", 1]//pf on 
 		,
-		[IModSet, Transform: Pf, 3]//pf & pg on
+		[IModSet, "Transform:Pf", 3]//pf & pg on
 	]
 	,//else
-	[VarSet, ModState, [IModGet, Transform: Pf]]
+	[VarSet, ModState, [IModGet, "Transform:Pf"]]
 	[If, ModState = 1,//If pf on
-		[IModSet, Transform: Pf, 0]//all off
+		[IModSet, "Transform:Pf", 0]//all off
 		,
-		[IModSet, Transform: Pf, 2]//pg on
+		[IModSet, "Transform:Pf", 2]//pg on
 	]
 	,35, 
 ]
@@ -1298,20 +1329,20 @@ pixels (0:AutoWidth NonZero:Specified width)]
 
 [ISwitch, "ZPlugin:customButtons:PG", 0,
 	"Toggle Polyframe & PolyGroup Visibility",
-	[VarSet, ModState, [IModGet, Transform: Pf]]
-	[ISet, Transform: Pf, 1] 
+	[VarSet, ModState, [IModGet, "Transform:Pf"]]
+	[ISet, "Transform:Pf", 1] 
 	[If, ModState = 0,//If all off     
-		[IModSet, Transform: Pf, 2]//pg on 
+		[IModSet, "Transform:Pf", 2]//pg on 
 		,
-		[IModSet, Transform: Pf, 3]//else pf & pg on
+		[IModSet, "Transform:Pf", 3]//else pf & pg on
 	]
 	,
-	[VarSet, ModState, [IModGet, Transform: Pf]]
-	[ISet, Transform: Pf, 0]
+	[VarSet, ModState, [IModGet, "Transform:Pf"]]
+	[ISet, "Transform:Pf", 0]
 	[If, ModState = 2,//If pg on
-		[IModSet, Transform: Pf, 0]//all off
+		[IModSet, "Transform:Pf", 0]//all off
 		,
-		[IModSet, Transform: Pf, 1]//else pf on
+		[IModSet, "Transform:Pf", 1]//else pf on
 	]
 	,35, 
 ]
@@ -1321,14 +1352,14 @@ pixels (0:AutoWidth NonZero:Specified width)]
 [ISwitch, "ZPlugin:customButtons:DynamicPersp", 1,
 	"Toggle Dynamic Perspective",
 	[VarSet, Target, "Draw:Perspective"]
-	[VarSet, Value, [IModGet, Draw:Perspective]]
+	[VarSet, Value, [IModGet, "Draw:Perspective"]]
 	//[If,      Value = 0
 	[IModSet, Target, 1]//,//off
 	//[IModSet, Target, 0]//else on
 	//]
 	,
 	[VarSet, Target, "Draw:Perspective"]
-	[VarSet, Value, [IModGet, Draw:Perspective]]
+	[VarSet, Value, [IModGet, "Draw:Perspective"]]
 	//[If,      Value = 1
 	[IModSet, Target, 0]//,//on
 	//[IModSet, Target, 1]//else off
@@ -1340,16 +1371,16 @@ pixels (0:AutoWidth NonZero:Specified width)]
 
 [ISwitch, "ZPlugin:customButtons:Proj", 0,
 	"Toggle Project Image on Mesh",
-	[VarSet, Value, [IGet, Draw:Project on Mesh]]
+	[VarSet, Value, [IGet, "Draw:Project on Mesh"]]
 	[If,   Value < 1,//If off
-		[ISet, Draw:Project on Mesh, 1]// on 
+		[ISet, "Draw:Project on Mesh", 1]// on 
 		,
 		[noteBar, Value]//else print value
 	]
 	,//else
-	[VarSet, Value, [IGet, Draw:Project on Mesh]]
+	[VarSet, Value, [IGet, "Draw:Project on Mesh"]]
 	[If,   Value = 1,//If on
-		[ISet, Draw:Project on Mesh, 0]//all off
+		[ISet, "Draw:Project on Mesh", 0]//all off
 		,
 		[noteBar, Value]//else print value
 	]
@@ -1362,17 +1393,17 @@ pixels (0:AutoWidth NonZero:Specified width)]
 "Preview Dynamic Subd, Polyframe Off, Mask Off, Persp On",
 
 [VarSet, smoothDynamic, "Tool:Geometry:s.Dynamic"]
-	[ISet,	Transform:Pf, 0]
-	[ISet,	Tool:Masking:View Mask, 0]
-	[ISet,	Draw: Perspective, 1]
+	[ISet,	"Transform:Pf", 0]
+	[ISet,	"Tool:Masking:View Mask", 0]
+	[ISet,	"Draw:Perspective", 1]
 	[If, [IExists, smoothDynamic],
 		[ISet,	smoothDynamic, 1]
 	]
 	,
-	[IModSet,Transform: Pf, 3]
-	[ISet,   Transform:Pf, 1] 
-	[ISet,   Tool:Masking:View Mask, 1]
-	[ISet,	 Draw: Perspective, 0]
+	[IModSet, "Transform:Pf", 3]
+	[ISet, "Transform:Pf", 1] 
+	[ISet, "Tool:Masking:View Mask", 1]
+	[ISet, "Draw:Perspective", 0]
 	[If, [IExists, smoothDynamic],
 		[ISet,   smoothDynamic, 0]
 	]
@@ -1381,34 +1412,126 @@ pixels (0:AutoWidth NonZero:Specified width)]
 [IEnable, "ZPlugin:customButtons:Dyn w/Persp"]
 
 
-[ISwitch,"ZPlugin:customButtons:ClipC", 0,
+[ISwitch, "ZPlugin:customButtons:ClipC", 0,
 	"Clip Center (Brush:ClipCircleCenter)", 
-	[IPress, Brush:ClipCircleCenter]
+	[IPress, "Brush:ClipCircleCenter"]
 	,
-	[IPress, Brush:ClipCurve]
+	[IPress, "Brush:ClipCurve"]
 	,,37
 ]
 [IEnable, "ZPlugin:customButtons:ClipC"]
 
 
-[ISwitch,"ZPlugin:customButtons:MskC", 0,
+[ISwitch, "ZPlugin:customButtons:MskC", 0,
 	"Mask Center (Brush:MaskCenterSquared)", 
-	[IPress, Brush:MaskCenterSquared]//custom brush
+	[IPress, "Brush:MaskCenterSquared"]//custom brush
 	,
-	[IPress, Brush:MaskRect]
+	[IPress, "Brush:MaskRect"]
 	,,37
 ]
 [IEnable, "ZPlugin:customButtons:MskC"]
 
 
-[ISwitch,"ZPlugin:customButtons:dS", 0,
+[ISwitch, "ZPlugin:customButtons:DS", 0,
 	"Toggle polygon draw size [.85] (Tool:Display Properties:Polygons Draw Size)",
-	[ISet, Tool:Display Properties:Polygons Draw Size,0.85]
+	[ISet, "Tool:Display Properties:Polygons Draw Size", 0.85]
 	,
-	[ISet, Tool:Display Properties:Polygons Draw Size,1]
+	[ISet, "Tool:Display Properties:Polygons Draw Size", 1]
 	,,19
 ]
-[IEnable, "ZPlugin:customButtons:dS"]
+[IEnable, "ZPlugin:customButtons:DS"]
+
+
+// smoothSubDiv Levels -------------------------------------
+[ISwitch, "ZPlugin:customButtons:d1", 0,
+	"Dynamic Subdivide Level 1 (Tool:Geometry:s.SmoothSubdiv)",
+	[If, [IGet, "Transform:Edit"],
+		[ISet, "Tool:Geometry:s.SmoothSubdiv", 1]
+		[IUnPress, "ZPlugin:customButtons:d2"]
+		[IUnPress, "ZPlugin:customButtons:d3"]
+		[IUnPress, "ZPlugin:customButtons:d4"]
+		,
+		[NoteBar, "Requires Edit Mode."]
+		[IUnPress, "ZPlugin:customButtons:d1"]
+	]
+	,
+	[If, [IGet, "Transform:Edit"],
+		[ISet, "Tool:Geometry:s.SmoothSubdiv", 0]
+		,
+		[NoteBar, "Requires Edit Mode."]
+		[IUnPress, "ZPlugin:customButtons:d1"]
+	]
+	,,19
+]
+[IEnable, "ZPlugin:customButtons:d1"]
+
+[ISwitch, "ZPlugin:customButtons:d2", 0,
+	"Dynamic Subdivide Level 2 (Tool:Geometry:s.SmoothSubdiv)",
+	[If, [IGet, "Transform:Edit"],
+		[ISet, "Tool:Geometry:s.SmoothSubdiv", 2]
+		[IUnPress, "ZPlugin:customButtons:d1"]
+		[IUnPress, "ZPlugin:customButtons:d3"]
+		[IUnPress, "ZPlugin:customButtons:d4"]
+		,
+		[NoteBar, "Requires Edit Mode."]
+		[IUnPress, "ZPlugin:customButtons:d2"]
+	]
+	,
+	[If, [IGet, "Transform:Edit"],
+		[ISet, "Tool:Geometry:s.SmoothSubdiv", 0]
+		,
+		[NoteBar, "Requires Edit Mode."]
+		[IUnPress, "ZPlugin:customButtons:d2"]
+	]
+	,,19
+]
+[IEnable, "ZPlugin:customButtons:d2"]
+
+[ISwitch, "ZPlugin:customButtons:d3", 0,
+	"Dynamic Subdivide Level 3 (Tool:Geometry:s.SmoothSubdiv)",
+	[If, [IGet, "Transform:Edit"],
+		[ISet, "Tool:Geometry:s.SmoothSubdiv", 3]
+		[IUnPress, "ZPlugin:customButtons:d1"]
+		[IUnPress, "ZPlugin:customButtons:d2"]
+		[IUnPress, "ZPlugin:customButtons:d4"]
+		,
+		[NoteBar, "Requires Edit Mode."]
+		[IUnPress, "ZPlugin:customButtons:d3"]
+	]
+	,
+	[If, [IGet, "Transform:Edit"],
+		[ISet, "Tool:Geometry:s.SmoothSubdiv", 0]
+		,
+		[NoteBar, "Requires Edit Mode."]
+		[IUnPress, "ZPlugin:customButtons:d3"]
+	]
+	,,19
+]
+[IEnable, "ZPlugin:customButtons:d3"]
+
+[ISwitch, "ZPlugin:customButtons:d4", 0,
+	"Dynamic Subdivide Level 4 (Tool:Geometry:s.SmoothSubdiv)",
+	[If, [IGet, "Transform:Edit"],
+		[ISet, "Tool:Geometry:s.SmoothSubdiv", 4]
+		[IUnPress, "ZPlugin:customButtons:d1"]
+		[IUnPress, "ZPlugin:customButtons:d2"]
+		[IUnPress, "ZPlugin:customButtons:d3"]
+		,
+		[NoteBar, "Requires Edit Mode."]
+		[IUnPress, "ZPlugin:customButtons:d4"]
+	]
+	,
+	[If, [IGet, "Transform:Edit"],
+		[ISet, "Tool:Geometry:s.SmoothSubdiv", 0]
+		,
+		[NoteBar, "Requires Edit Mode."]
+		[IUnPress, "ZPlugin:customButtons:d4"]
+	]
+	,,19
+]
+[IEnable, "ZPlugin:customButtons:d4"]
+// ---------------------------------------------------------
+
 
 
 
@@ -1428,17 +1551,17 @@ pixels (0:AutoWidth NonZero:Specified width)]
 //
 // [ISwitch, "ZPlugin:customButtons:PG", 0,
 // "Toggle Polyframe & PolyGroup Visibility",
-// [VarSet, ModState, [IModGet, Transform: Pf]]
-// [ISet, Transform: Pf, 1] 
+// [VarSet, ModState, [IModGet, "Transform:Pf"]]
+// [ISet, "Transform:Pf", 1] 
 // [If, ModState = 0,//If all off     
-// [IModSet, Transform: Pf, 2],//pg on 
-// [IModSet, Transform: Pf, 3]]//else pf & pg on
+// [IModSet, "Transform:Pf", 2],//pg on 
+// [IModSet, "Transform:Pf", 3]]//else pf & pg on
 // ,
-// [VarSet, ModState, [IModGet, Transform: Pf]]
-// [ISet, Transform: Pf, 0] 
+// [VarSet, ModState, [IModGet, "Transform:Pf"]]
+// [ISet, "Transform:Pf", 0] 
 // [If, ModState = 2,//If pg on
-// [IModSet, Transform: Pf, 0],//all off
-// [IModSet, Transform: Pf, 1]]//else pf on
+// [IModSet, "Transform:Pf", 0],//all off
+// [IModSet, "Transform:Pf", 1]]//else pf on
 // ,
 // 35, 
 // ]
@@ -1446,10 +1569,10 @@ pixels (0:AutoWidth NonZero:Specified width)]
 
 // [ISwitch, "ZPlugin:customButtons:PolyFrame",1,
 // "Toggle Polyframe", 
-// [IModSet,Transform: Pf, 1]
-// [ISet,Transform: Pf, 1]
+// [IModSet,"Transform:Pf", 1]
+// [ISet,"Transform:Pf", 1]
 // ,
-// [ISet,Transform: Pf, 0]
+// [ISet,"Transform:Pf", 0]
 // ,
 // 75, 
 // ]
@@ -1460,17 +1583,17 @@ pixels (0:AutoWidth NonZero:Specified width)]
 
 // [ISwitch, "ZPlugin:customButtons:WireFrameState", 0,
 // "Toggle Polyframe, PolyGroup Visibility",
-// [VarSet, ModState, [IModGet, Transform: Pf]]
-// [ISet, Transform: Pf, 1] 
+// [VarSet, ModState, [IModGet, "Transform:Pf"]]
+// [ISet, "Transform:Pf", 1] 
 // [If, ModState = 0,//If all off     
-// [IModSet, Transform: Pf, 2],//pg on 
-// [IModSet, Transform: Pf, 3]]//else pf & pg on
+// [IModSet, "Transform:Pf", 2],//pg on 
+// [IModSet, "Transform:Pf", 3]]//else pf & pg on
 // ,
-// [VarSet, ModState, [IModGet, Transform: Pf]]
-// [ISet, Transform: Pf, 0] 
+// [VarSet, ModState, [IModGet, "Transform:Pf"]]
+// [ISet, "Transform:Pf", 0] 
 // [If, ModState = 2,//If pg on
-// [IModSet, Transform: Pf, 0],//all off
-// [IModSet, Transform: Pf, 1]]//else pf on
+// [IModSet, "Transform:Pf", 0],//all off
+// [IModSet, "Transform:Pf", 1]]//else pf on
 // ,
 // 35, 
 // ]
@@ -1488,7 +1611,7 @@ Slider width in pixels (0:AutoWidth NonZero:Specified width)]
 
 [ISlider, "ZPlugin:customButtons:MeshOpacity", 100,10,0,100,
 	"Model Opacity",
-	[ISet, Texture:Image Plane:Reference Views:Model Opacity,
+	[ISet, "Texture:Image Plane:Reference Views:Model Opacity",
 	[IGet, "Zplugin:customButtons:MeshOpacity"]
 	]
 	,,75
@@ -1496,7 +1619,7 @@ Slider width in pixels (0:AutoWidth NonZero:Specified width)]
 
 [ISlider, "ZPlugin:customButtons:ProjOnMesh", 0,.10,0,1,
 	"Project On Mesh",
-	[ISet, Draw:Project on Mesh,
+	[ISet, "Draw:Project on Mesh",
 	[IGet, "Zplugin:customButtons:ProjOnMesh"]
 	]
 	,,75
@@ -1504,7 +1627,7 @@ Slider width in pixels (0:AutoWidth NonZero:Specified width)]
 
 [ISlider, "ZPlugin:customButtons:r.R", 6,1,2,40,
 	"(Transform:RadialCount)",
-	[ISet, Transform:RadialCount,
+	[ISet, "Transform:RadialCount",
 	[IGet, "Zplugin:customButtons:r.R"]
 	]
 	,,37
