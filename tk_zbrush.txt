@@ -341,7 +341,7 @@ NonZero:Specified width), Optional hotkey, Optional button icon
 	[If, [IExists, buttonPath],
 		[IPress, buttonPath]
 	]
-	,,38 ,, "tk_zbrush\tk_zbrush_icons\FrameCrease.psd" ,38
+	,,38 ,, "tk_zbrush\icons\FrameCrease.psd" ,38
 ]
 
 [IButton,"ZPlugin:customButtons:Copy",
@@ -1006,21 +1006,21 @@ NonZero:Specified width), Optional hotkey, Optional button icon
 [IButton,"ZPlugin:customButtons:m._",
 	"(HIDE)",
 	[IPress, "HIDE"]
-	,,  ,, "tk_zbrush\tk_zbrush_icons\Hide.psd"
+	,,  ,, "tk_zbrush\icons\Hide.psd"
 	,19
 ]
 
 [IButton,"ZPlugin:customButtons:m.≡",
 	"(RESTORE)", 
 	[IPress, "RESTORE"]
-	,,  ,, "tk_zbrush\tk_zbrush_icons\Restore.psd"
+	,,  ,, "tk_zbrush\icons\Restore.psd"
 	,19
 ]
 
 [IButton,"ZPlugin:customButtons:m.x",
 	"(CLOSE)", 
 	[IPress, "CLOSE"]
-	,,  ,, "tk_zbrush\tk_zbrush_icons\Close.psd"
+	,,  ,, "tk_zbrush\icons\Close.psd"
 	,19
 ]
 
