@@ -1093,6 +1093,16 @@ NonZero:Specified width), Optional hotkey, Optional button icon
 	,,75
 ]
 
+[IButton,"ZPlugin:customButtons:UiSnapShot",
+	"(Preferences:Config:UI SnapShot)",
+	[IPress,Preferences:Config:UI SnapShot]
+	,,75
+]
+
+
+
+
+
 
 
 
