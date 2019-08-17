@@ -9,6 +9,7 @@
 *.*
 
 
+
 #except
 !.gitignore
 !tk_zbrush.txt
@@ -20,13 +21,14 @@
 !tk_ui_8.19.cfg
 
 
-#exception for directories, and sub-directories
+#exception for directories, and sub-directories:
 !tk_zbrush/*
 !tk_zbrush/*/*
 !docs/*
 
 
-
+#specific subdirectory ignores:
+*tk_zbrush/tk_zbrush_archive.rar
 
 
 
