@@ -7,9 +7,13 @@
 
 
 
-
-
-
+//init
+//edit mode
+[If, [IGet, "Transform:Edit"],
+	[ISet, "ZPlugin:customButtons:Edit", 1]
+	, //Else:
+	[ISet, "ZPlugin:customButtons:Edit", 0]
+]
 
 
 
@@ -73,7 +77,7 @@ NonZero:Specified width), Optional hotkey, Optional button icon
 	,,75
 ]
 
-[IButton,"ZPlugin:customButtons:EdgloopMask",
+[IButton,"ZPlugin:customButtons:EdgeloopMsk",
 	"Edgeloop Masked Border (Tool:Geometry:Edgeloop Masked Border)",
 	[VarSet, buttonPath, "Tool:Geometry:Edgeloop Masked Border"]
     [HotKeyText, buttonPath]
@@ -443,8 +447,7 @@ NonZero:Specified width), Optional hotkey, Optional button icon
 ]
 
 [IButton,"ZPlugin:customButtons:Weld",
-	"Weld Points 1px(Tool:Geometry:WeldPoints)", 
-	[ISet, "Tool:Geometry:WeldDist", 1]
+	"Weld Points (Tool:Geometry:WeldPoints)", 
 	[VarSet, buttonPath, "Tool:Geometry:WeldPoints"]
     [HotKeyText, buttonPath]
 	[If,[IExists, buttonPath],
@@ -944,7 +947,7 @@ NonZero:Specified width), Optional hotkey, Optional button icon
 	]
 	,,75
 ]
-
+/*
 [IButton,"ZPlugin:customButtons:w.5",
 	"Weld Points 5px(Tool:Geometry:WeldPoints)", 
 	[ISet, "Tool:Geometry:WeldDist", 5]
@@ -965,7 +968,7 @@ NonZero:Specified width), Optional hotkey, Optional button icon
 	]
 	,,18
 ]
-
+*/
 [IButton,"ZPlugin:customButtons:delLow",
 	"Delete Lower Sudiv Levels(Tool:Geometry:Del Lower)", 
 	[VarSet, buttonPath, "Tool:Geometry:Del Lower"]
@@ -1054,27 +1057,41 @@ NonZero:Specified width), Optional hotkey, Optional button icon
 	,,75
 ]
 
-[IButton,"ZPlugin:customButtons:decFocalShift",
-	"Decrement Focal Shift (Draw:Focal Shift)",
-	[VarSet, drawSize, INT([IGet, "Draw:Focal Shift"])]
-	[VarSub, drawSize, 2]//[VarDec, drawSize]
-	[NoteBar, drawSize]
-	[ISet, "Draw:Focal Shift", drawSize]
-	,,19
+[IButton,"ZPlugin:customButtons:-FocalShift",
+	"Decrement Focal Shift. (Draw:Focal Shift)",
+	[VarSet, focalShift, INT([IGet, "Draw:Focal Shift"])]
+	[VarSub, focalShift, 1]//[VarDec, drawSize]
+	[NoteBar, focalShift]
+	[ISet, "Draw:Focal Shift", focalShift]
+	,,75
 ]
 
-[IButton,"ZPlugin:customButtons:incFocalShift",
-	"Increment Focal Shift (Draw:Focal Shift)",
-	[VarSet, drawSize, INT([IGet, "Draw:Focal Shift"])]
-	[VarAdd, drawSize, 2]//[VarInc, drawSize]
-	[NoteBar, drawSize]
-	[ISet, "Draw:Focal Shift", drawSize]
-	,,19
+[IButton,"ZPlugin:customButtons:+FocalShift",
+	"Increment Focal Shift. (Draw:Focal Shift)",
+	[VarSet, focalShift, INT([IGet, "Draw:Focal Shift"])]
+	[VarAdd, focalShift, 1]//[VarInc, drawSize]
+	[NoteBar, focalShift]
+	[ISet, "Draw:Focal Shift", focalShift]
+	,,75
 ]
 
+[IButton,"ZPlugin:customButtons:-DrawSize",
+	"Decrement Draw Size. (Draw:Draw Size)",
+	[VarSet, drawSize, INT([IGet, "Draw:Draw Size"])]
+	[VarSub, drawSize, 1]//[VarInc, drawSize]
+	[NoteBar, drawSize]
+	[ISet, "Draw:Draw Size", drawSize]
+	,,75
+]
 
-
-
+[IButton,"ZPlugin:customButtons:+DrawSize",
+	"Increment Draw Size. (Draw:Draw Size)",
+	[VarSet, drawSize, INT([IGet, "Draw:Draw Size"])]
+	[VarAdd, drawSize, 1]//[VarInc, drawSize]
+	[NoteBar, drawSize]
+	[ISet, "Draw:Draw Size", drawSize]
+	,,75
+]
 
 
 
@@ -1450,14 +1467,14 @@ pixels (0:AutoWidth NonZero:Specified width)]
 		[IUnPress, "ZPlugin:customButtons:d2"]
 		[IUnPress, "ZPlugin:customButtons:d3"]
 		[IUnPress, "ZPlugin:customButtons:d4"]
-		,
+		, //Else:
 		[NoteBar, "Requires Edit Mode."]
 		[IUnPress, "ZPlugin:customButtons:d1"]
 	]
 	,
 	[If, [IGet, "Transform:Edit"],
 		[ISet, "Tool:Geometry:s.SmoothSubdiv", 0]
-		,
+		,  //Else:
 		[NoteBar, "Requires Edit Mode."]
 		[IUnPress, "ZPlugin:customButtons:d1"]
 	]
@@ -1472,14 +1489,14 @@ pixels (0:AutoWidth NonZero:Specified width)]
 		[IUnPress, "ZPlugin:customButtons:d1"]
 		[IUnPress, "ZPlugin:customButtons:d3"]
 		[IUnPress, "ZPlugin:customButtons:d4"]
-		,
+		, //Else:
 		[NoteBar, "Requires Edit Mode."]
 		[IUnPress, "ZPlugin:customButtons:d2"]
 	]
 	,
 	[If, [IGet, "Transform:Edit"],
 		[ISet, "Tool:Geometry:s.SmoothSubdiv", 0]
-		,
+		, //Else:
 		[NoteBar, "Requires Edit Mode."]
 		[IUnPress, "ZPlugin:customButtons:d2"]
 	]
@@ -1494,14 +1511,14 @@ pixels (0:AutoWidth NonZero:Specified width)]
 		[IUnPress, "ZPlugin:customButtons:d1"]
 		[IUnPress, "ZPlugin:customButtons:d2"]
 		[IUnPress, "ZPlugin:customButtons:d4"]
-		,
+		, //Else:
 		[NoteBar, "Requires Edit Mode."]
 		[IUnPress, "ZPlugin:customButtons:d3"]
 	]
 	,
 	[If, [IGet, "Transform:Edit"],
 		[ISet, "Tool:Geometry:s.SmoothSubdiv", 0]
-		,
+		, //Else:
 		[NoteBar, "Requires Edit Mode."]
 		[IUnPress, "ZPlugin:customButtons:d3"]
 	]
@@ -1516,14 +1533,14 @@ pixels (0:AutoWidth NonZero:Specified width)]
 		[IUnPress, "ZPlugin:customButtons:d1"]
 		[IUnPress, "ZPlugin:customButtons:d2"]
 		[IUnPress, "ZPlugin:customButtons:d3"]
-		,
+		, //Else:
 		[NoteBar, "Requires Edit Mode."]
 		[IUnPress, "ZPlugin:customButtons:d4"]
 	]
 	,
 	[If, [IGet, "Transform:Edit"],
 		[ISet, "Tool:Geometry:s.SmoothSubdiv", 0]
-		,
+		, //Else:
 		[NoteBar, "Requires Edit Mode."]
 		[IUnPress, "ZPlugin:customButtons:d4"]
 	]
@@ -1608,8 +1625,8 @@ Initially Disabled? (0:Enabled(ByDefault) NonZero:Disabled),
 Slider width in pixels (0:AutoWidth NonZero:Specified width)]
 */
 
-
-[ISlider, "ZPlugin:customButtons:MeshOpacity", 100,10,0,100,
+//mesh opacity
+[ISlider, "ZPlugin:customButtons:MeshOpacity", 100,10,0,100, // default, step, start, stop
 	"Model Opacity",
 	[ISet, "Texture:Image Plane:Reference Views:Model Opacity",
 	[IGet, "Zplugin:customButtons:MeshOpacity"]
@@ -1617,6 +1634,7 @@ Slider width in pixels (0:AutoWidth NonZero:Specified width)]
 	,,75
 ]
 
+//
 [ISlider, "ZPlugin:customButtons:ProjOnMesh", 0,.10,0,1,
 	"Project On Mesh",
 	[ISet, "Draw:Project on Mesh",
@@ -1625,17 +1643,23 @@ Slider width in pixels (0:AutoWidth NonZero:Specified width)]
 	,,75
 ]
 
-[ISlider, "ZPlugin:customButtons:r.R", 6,1,2,40,
-	"(Transform:RadialCount)",
+//radial count
+[ISlider, "ZPlugin:customButtons:Rad", 6,1,2,40,
+	"Radial Count (Transform:RadialCount)",
 	[ISet, "Transform:RadialCount",
-	[IGet, "Zplugin:customButtons:r.R"]
+	[IGet, "Zplugin:customButtons:Rad"]
 	]
 	,,37
 ]
 
-
-
-
+//weld distance
+[ISlider, "ZPlugin:customButtons:dst", 1,1,1,20,
+	"Weld Distance (Tool:Geometry:WeldDist)",
+	[ISet, "Tool:Geometry:WeldDist",
+	[IGet, "Zplugin:customButtons:dst"]
+	]
+	,,37
+]
 
 
 
