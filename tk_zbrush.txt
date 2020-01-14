@@ -7,13 +7,7 @@
 
 
 
-//init
-//edit mode
-[If, [IGet, "Transform:Edit"],
-	[ISet, "ZPlugin:customButtons:Edit", 1]
-	, //Else:
-	[ISet, "ZPlugin:customButtons:Edit", 0]
-]
+
 
 
 
@@ -1116,12 +1110,15 @@ Popup info Text, Commands group to execute when button is pressed
 Disabled? (0:Enabled(ByDefault) NonZero:Disabled), Switch width in
 pixels (0:AutoWidth NonZero:Specified width)]
 */
+//init
+//edit mode
 
 
 [ISwitch, "ZPlugin:customButtons:Edit", 0,
-	"Edit Mode (Transform:Edit)", 
+	"Edit Mode (Transform:Edit)",
 	[ISet, "Transform:Edit", 1]
-	, 
+	[ISet, "ZPlugin:customButtons:Edit", [IGet, "Transform:Edit"]] //if edit not on keep switch off
+	,
 	[ISet, "Transform:Edit", 0]
 	,19, 
 ]

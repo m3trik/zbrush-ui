@@ -1,3 +1,4 @@
+//startup
 // DefaultZScript
 
 [
@@ -10,24 +11,24 @@ If, [MemGetSize, tk_startup_memBlock], //returns 1 or greater if memory block ex
 
 
 // run once to set preferences, make sure to store config, then comment out.
-[ISet, Preferences:Undo History:Max Undo History, 100] //levels of undo history.
-[ISet, Preferences:LightBox:Max Recent Files, 25]
-[ISet, Preferences:QuickSave:Max QuickSave Files, 5]
-[ISet, Preferences:Draw:Max Brush Size, 200] //max brush size
-[IUnPress, Preferences:LightBox:Open At Launch]
-[IUnPress, Preferences:Lightbox:Auto Create Shortcuts]
-[ISet, Preferences:Interface:Buttons Size, 38]
-[IUnPress, Preferences:Interface:Wide Buttons] //wide buttons off
-[IPress, Preferences:Interface:Auto Hide 2D Tools]
-[IPress, Preferences:Interface:Show Subtools Folders]
-[ISet, Preferences:Interface:Placement, 3]
-[IUnPress,Preferences:Interface:Auto Show/Hide]
-//canvas
-[ISet, Document:WSize, 1] 
-[IPress, Document:New Document] 
-[IPress, Document:Save As Startup Doc]
-[ISet, Document:Back, 28.1098] //background color
-[ISet, Document:Range, 0] //background gradient
+// [ISet, Preferences:Undo History:Max Undo History, 100] //levels of undo history.
+// [ISet, Preferences:LightBox:Max Recent Files, 25]
+// [ISet, Preferences:QuickSave:Max QuickSave Files, 5]
+// [ISet, Preferences:Draw:Max Brush Size, 200] //max brush size
+// [IUnPress, Preferences:LightBox:Open At Launch]
+// [IUnPress, Preferences:Lightbox:Auto Create Shortcuts]
+// [ISet, Preferences:Interface:Buttons Size, 38]
+// [IUnPress, Preferences:Interface:Wide Buttons] //wide buttons off
+// [IPress, Preferences:Interface:Auto Hide 2D Tools]
+// [IPress, Preferences:Interface:Show Subtools Folders]
+// [ISet, Preferences:Interface:Placement, 3]
+// [IUnPress,Preferences:Interface:Auto Show/Hide]
+// //canvas
+// [ISet, Document:WSize, 1] 
+// [IPress, Document:New Document] 
+// [IPress, Document:Save As Startup Doc]
+// [ISet, Document:Back, 28.1098] //background color
+// [ISet, Document:Range, 0] //background gradient
 //[ISet, Document:Width:Document Width, 1458]
 //[ISet, Document:Width:Document Height, 978]
 //[IPress, Document:Resize Document] //set width and height
@@ -46,22 +47,22 @@ If, [MemGetSize, tk_startup_memBlock], //returns 1 or greater if memory block ex
 [IHide, Colors>]
 [IHide, <Layout]
 [IHide, Layout>]
-[IHide, Unlock]
-[IHide, Menus]
+//[IHide, Unlock]
+//[IHide, Menus]
 
 
 
 // //init L menu
 // //[IMinimize, L:, 1]
-[IMinimize, L:Subtool]
+// [IMinimize, L:Subtool]
 [IMinimize, L:Subtool:Extract]
 [IMinimize, L:Subtool:Insert Mesh]
 [IMinimize, L:Subtool:Unified Skin]
 [IMinimize, L:Subtool:Shadowbox]
 [IMinimize, L:PolyGroup]
 [IMinimize, L:Edgeloop]
-[IMinimize, L:Mask]
 [IMinimize, L:Mirror]
+[IMinimize, L:Symmetry]
 [IMinimize, L:ReMesh]
 [IMinimize, L:Edit Topology]
 [IMinimize, L:MorphTarget]
@@ -73,18 +74,18 @@ If, [MemGetSize, tk_startup_memBlock], //returns 1 or greater if memory block ex
 // //[IMinimize, R:, 1]
 [IMinimize, R:Brush Options]
 [IMinimize, R:Curve]
-[IMinimize, R:Symmetry]
 [IMinimize, R:Viewport]
 [IMinimize, R:Surface]
 [IMinimize, R:Texturing]
 [IMinimize, R:Sketch]
-[IMinimize, R:Scene]
 [IMinimize, R:Brush]
+[IMinimize, R:Mask]
 [IMinimize, R:Transpose]
 [IMaximize, R:Maps:Texture:Create]
 [IMinimize, R:ProjectFile:UI]
 [IMinimize, R:ProjectFile:UI:TitleBar]
 [IMinimize, R:ProjectFile:UI:HotKeys]
+[IMinimize, R:Scene]
 
 
 // // init Tool menu

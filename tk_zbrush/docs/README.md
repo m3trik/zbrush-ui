@@ -26,6 +26,13 @@
 
 * add files to zbrush's plugin directory at %programfiles%\Pixologic\ZBrush 20xx\ZStartup\ZPlugs64
 
+* add this code snippet to your 'DefaultZScript.txt' in order to run the startup script.
+
+[If,1,
+[FileNameSetNext,"C:\Program Files\Pixologic\ZBrush 20xx\ZStartup\ZPlugs64\tk_zbrush\startup.txt"]
+[IPress,ZScript:Load]
+]
+
 
 Then after launching ZBrush:
 set up the ui:
