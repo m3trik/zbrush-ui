@@ -1,0 +1,7 @@
+//startup
+
+
+[If,1,
+[FileNameSetNext,"C:\Program Files\Pixologic\ZBrush 2020\ZStartup\ZPlugs64\tk_zbrush\startup.txt"]
+[IPress,ZScript:Load]
+]

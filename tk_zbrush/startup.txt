@@ -10,25 +10,25 @@ If, [MemGetSize, tk_startup_memBlock], //returns 1 or greater if memory block ex
 	[IFreeze, [MVarDef, tk_startup_memBlock, 1, 0]]
 
 
-// run once to set preferences, make sure to store config, then comment out.
-// [ISet, Preferences:Undo History:Max Undo History, 100] //levels of undo history.
-// [ISet, Preferences:LightBox:Max Recent Files, 25]
-// [ISet, Preferences:QuickSave:Max QuickSave Files, 5]
-// [ISet, Preferences:Draw:Max Brush Size, 200] //max brush size
-// [IUnPress, Preferences:LightBox:Open At Launch]
-// [IUnPress, Preferences:Lightbox:Auto Create Shortcuts]
-// [ISet, Preferences:Interface:Buttons Size, 38]
-// [IUnPress, Preferences:Interface:Wide Buttons] //wide buttons off
-// [IPress, Preferences:Interface:Auto Hide 2D Tools]
-// [IPress, Preferences:Interface:Show Subtools Folders]
-// [ISet, Preferences:Interface:Placement, 3]
-// [IUnPress,Preferences:Interface:Auto Show/Hide]
-// //canvas
-// [ISet, Document:WSize, 1] 
-// [IPress, Document:New Document] 
-// [IPress, Document:Save As Startup Doc]
-// [ISet, Document:Back, 28.1098] //background color
-// [ISet, Document:Range, 0] //background gradient
+// // run once to set preferences, make sure to store config, then comment out.
+[ISet, Preferences:Undo History:Max Undo History, 100] //levels of undo history.
+[ISet, Preferences:LightBox:Max Recent Files, 25]
+[ISet, Preferences:QuickSave:Max QuickSave Files, 5]
+[ISet, Preferences:Draw:Max Brush Size, 200] //max brush size
+[IUnPress, Preferences:LightBox:Open At Launch]
+[IUnPress, Preferences:Lightbox:Auto Create Shortcuts]
+[ISet, Preferences:Interface:Buttons Size, 38]
+[IUnPress, Preferences:Interface:Wide Buttons] //wide buttons off
+[IPress, Preferences:Interface:Auto Hide 2D Tools]
+[IPress, Preferences:Interface:Show Subtools Folders]
+[ISet, Preferences:Interface:Placement, 3]
+[IUnPress,Preferences:Interface:Auto Show/Hide]
+// // canvas
+[ISet, Document:WSize, 1] 
+[IPress, Document:New Document] 
+[IPress, Document:Save As Startup Doc]
+[ISet, Document:Back, 28.1098] //canvas color
+[ISet, Document:Range, 0] //canvas gradient
 //[ISet, Document:Width:Document Width, 1458]
 //[ISet, Document:Width:Document Height, 978]
 //[IPress, Document:Resize Document] //set width and height
@@ -52,8 +52,8 @@ If, [MemGetSize, tk_startup_memBlock], //returns 1 or greater if memory block ex
 
 
 
-// //init L menu
-// //[IMinimize, L:, 1]
+// // init L menu
+// [IMinimize, L:, 1]
 // [IMinimize, L:Subtool]
 [IMinimize, L:Subtool:Extract]
 [IMinimize, L:Subtool:Insert Mesh]
@@ -71,7 +71,7 @@ If, [MemGetSize, tk_startup_memBlock], //returns 1 or greater if memory block ex
 [IMaximize, L:Subtool:Insert Mesh:IMM Brush]
 
 // // init R menu
-// //[IMinimize, R:, 1]
+// [IMinimize, R:, 1]
 [IMinimize, R:Brush Options]
 [IMinimize, R:Curve]
 [IMinimize, R:Viewport]
@@ -166,7 +166,7 @@ If, [MemGetSize, tk_startup_memBlock], //returns 1 or greater if memory block ex
 
 
 
-// scene settings
+// // scene settings
 [IPress, Material:MatCap White Cavity]
 [IPress, Transform: Pf]
 [IPress, Transform: Lsym]
