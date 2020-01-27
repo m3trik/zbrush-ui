@@ -2,38 +2,33 @@
 ## ZScript
 #################
 
-#ignore all directories, and sub-directories
+# ignore all directories, and sub-directories
 */*
 
-#ignore all files containing chars:
+# ignore all files containing chars:
 *.*
 
 
-
-#except
+# except
 !.gitattributes
 !.gitignore
 !tk_zbrush.txt
 !tk_zbrush_testScript.txt
 
+# exception for directories, and sub-directories:
+!tk_zbrush/**/*
+tk_zbrush/**/*.zsc
+tk_zbrush/**/*.rar
 
-#exception for directories, and sub-directories:
+
+
+# depricated
+#/imgs/**/*.*
+#!/imgs/**/.gitkeep
 #!tk_zbrush/*
 #!tk_zbrush/*/*
 #!docs/*
 #!icons/*
-
-!**/tk_zbrush
-
-*.zsc*
-
-
-
-#specific subdirectory ignores:
-*tk_zbrush/tk_zbrush_archive.rar
-
-
-
 
 
 
