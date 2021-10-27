@@ -1,8 +1,8 @@
 ## tk_zbrush
-###### *Customized ZBrush UI and toolkit.
+###### *A custom ZBrush UI.
 
 
-![alt text](https://raw.githubusercontent.com/m3trik/tk_zbrush/master/tk_zbrush/docs/UI_ZBrush.png)
+![alt text](https://raw.githubusercontent.com/m3trik/zbrush-ui/master/ui_data/docs/UI_ZBrush.png)
 
 
 
@@ -10,7 +10,7 @@
 ######
 **
 
-*continual work in progress..*
+*work in progress..*
 
 
 
@@ -21,29 +21,16 @@
  Installation:
 -----------------------------------------------
 ######
-(Assuming the directory structure is left default).
-
-
+(Assuming the directory structure is left default, and substituting the correct ZBrush version).
 * add files to zbrush's plugin directory at %programfiles%\Pixologic\ZBrush 20xx\ZStartup\ZPlugs64
 
-* add this code snippet to your 'DefaultZScript.txt' in order to run the startup script.
+Then after launching ZBrush: <br />
+Load and store the ui:
+* On the main menu bar: navigate to Preferences> Config> Load Ui, to load the file 'ui_config_x.xx.cfg' found in the 'ui_data' folder.
+* Preferences> Config> Store Config.
 
-[If,1,
-[FileNameSetNext,"C:\Program Files\Pixologic\ZBrush 20xx\ZStartup\ZPlugs64\tk_zbrush\startup.txt"]
-[IPress,ZScript:Load]
-]
+Set the startup state: <br />
+* ZScript> Load> load 'startup.txt' in the 'ui_data' folder.
 
-
-Then after launching ZBrush:
-set up the ui:
-* navigate to preferences> config> load ui, and load the ui config file 'tk_ui_x.xx.cfg' found at %programfiles%\Pixologic\ZBrush 20xx\ZStartup\ZPlugs64\tk_zbrush.
-* preferences> config> store config
-
-(after initially running the 'defaultZScript' startup script, and storing the settings, you can comment out those preferences that you don't usually need to run at startup.)
-
-hotkeys:
-* preferences> hotkeys> load, file 'tk_hotkeys_x.x.txt' found in the same folder previously used.
-* preferences> hotkeys> store
-
-color prefs:
-* preferences> icolors> load, file 'tk_ui_color_x.x.cfg' found in the same folder previously used.
+Load the color config: <br />
+* preferences> icolors> load, file 'ui_color_x.x.cfg' also found in the 'ui_data' folder.
