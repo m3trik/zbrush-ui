@@ -12,12 +12,14 @@
 # except
 !.gitattributes
 !.gitignore
-!tk_zbrush.txt
-!tk_zbrush_testScript.txt
+!ui_macros.txt
+!ui_macros.zsc
+!ui_macros_test.txt
+!ui_macros_test.zsc
 
 # exception for directories, and sub-directories:
 !ui_data/**/*
-ui_data/**/*.zsc
+# ui_data/**/*.zsc
 ui_data/**/*.rar
 
 
