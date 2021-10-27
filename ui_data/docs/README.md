@@ -1,5 +1,5 @@
 ## tk_zbrush
-###### *Customized ZBrush UI.
+###### *A custom ZBrush UI.
 
 
 ![alt text](https://raw.githubusercontent.com/m3trik/zbrush-ui/master/ui_data/docs/UI_ZBrush.png)
