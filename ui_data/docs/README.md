@@ -21,7 +21,7 @@
  Installation:
 -----------------------------------------------
 ######
-(Assuming the directory structure is left default, and substituting the correct zbrush version).
+(Assuming the directory structure is left default, and substituting the correct ZBrush version).
 * add files to zbrush's plugin directory at %programfiles%\Pixologic\ZBrush 20xx\ZStartup\ZPlugs64
 
 Then after launching ZBrush:
