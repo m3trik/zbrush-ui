@@ -16,9 +16,9 @@
 !tk_zbrush_testScript.txt
 
 # exception for directories, and sub-directories:
-!tk_zbrush/**/*
-tk_zbrush/**/*.zsc
-tk_zbrush/**/*.rar
+!ui_data/**/*
+ui_data/**/*.zsc
+ui_data/**/*.rar
 
 
 
