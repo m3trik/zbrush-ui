@@ -1764,7 +1764,7 @@
 	[IShow, "Tool:Visible"]
 	[IShow, "Tool:R"],
 	0, //initial state
-	75 //width
+	37 //width
 ]
 [IEnable, "ZPlugin:customButtons:MinTP"]
 
