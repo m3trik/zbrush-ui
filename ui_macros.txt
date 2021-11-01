@@ -1579,6 +1579,14 @@
 ]
 [IEnable, "ZPlugin:customButtons:Edit"]
 
+// set the initial state
+[VarSet, switch, "ZPlugin:customButtons:Edit"]
+[If, [IGet, "Transform:Edit"] = 0,
+	[ISet, switch, 0]
+,
+	[ISet, switch, 1]
+]
+
 
 [ISwitch, "ZPlugin:customButtons:Perspective", 0,
 	"Toggle Perspective Distortion",
@@ -1632,7 +1640,7 @@
 		[Sleep, 30, [ISet, Menus, 0]],
 		[noteBar, [IGet, Menus]]]
 	,
-	[ISet, Menus, 0],
+		[ISet, Menus, 0],
 	0, //initial state
 	75 //width
 ]
@@ -1672,101 +1680,6 @@
 	75 //width
 ]
 [IEnable, "ZPlugin:customButtons:AutoMask"]
-
-
-[ISwitch, "ZPlugin:customButtons:MinTP", 0,
-	"Toggle Minimal Tool Palette",
-	[IHide, "Tool:Geometry"]
-	[IHide, "Tool:ArrayMesh"]
-	[IHide, "Tool:NanoMesh"]
-	[IHide, "Tool:Layers"]
-	[IHide, "Tool:FiberMesh"]
-	[IHide, "Tool:GeometryHD"]
-	[IHide, "Tool:Preview"]
-	[IHide, "Tool:Surface"]
-	[IHide, "Tool:Deformation"]
-	[IHide, "Tool:Masking"]
-	[IHide, "Tool:Visibility"]
-	[IHide, "Tool:Polygroups"]
-	[IHide, "Tool:Contact"]
-	[IHide, "Tool:MorphTarget"]
-	[IHide, "Tool:PolyPaint"]
-	[IHide, "Tool:UVMap"]
-	[IHide, "Tool:TextureMap"]
-	[IHide, "Tool:DisplacementMap"]
-	[IHide, "Tool:NormalMap"]
-	[IHide, "Tool:VectorDisplacementMap"]
-	[IHide, "Tool:DisplayProperties"]
-	[IHide, "Tool:UnifiedSkin"]
-	[IHide, "Tool:Initialize"]
-	[IHide, "Tool:Import"]
-	[IHide, "Tool:Export"]
-	[IHide, "Tool:LoadTool"]
-	[IHide, "Tool:SaveAs"]
-	[IHide, "Tool:CopyTool"]
-	[IHide, "Tool:PasteTool"]
-	[IHide, "Tool:Clone"]
-	[IHide, "Tool:MakePolyMesh3D"]
-	[IHide, "Tool:GoZ"]
-	[IHide, "Tool:All"]
-	[IHide, "Tool:Visible"]
-	[IHide, "Tool:R"]
-	[IHide, "Tool:LoadTool"]
-	[IHide, "Tool:SaveAs"]
-	[IHide, "Tool:CopyTool"]
-	[IHide, "Tool:PasteTool"]
-	[IHide, "Tool:Clone"]
-	[IHide, "Tool:MakePolyMesh3D"]
-	[IHide, "Tool:GoZ"]
-	[IHide, "Tool:All"]
-	[IHide, "Tool:Visible"]
-	//[IPress,"Tool:R"]
-	[IHide, "Tool:R"]
-	[IHide, "Tool:SubTool:Copy"]
-	[IHide, "Tool:SubTool:Paste"]
-	[IHide, "Tool:SubTool:Duplicate"]
-	[IHide, "Tool:SubTool:Append"]
-	[IHide, "Tool:SubTool:Insert"]
-	,
-	[IShow, "Tool:Geometry"]
-	[IShow, "Tool:ArrayMesh"]
-	[IShow, "Tool:NanoMesh"]
-	[IShow, "Tool:Layers"]
-	[IShow, "Tool:FiberMesh"]
-	[IShow, "Tool:GeometryHD"]
-	[IShow, "Tool:Preview"]
-	[IShow, "Tool:Surface"]
-	[IShow, "Tool:Deformation"]
-	[IShow, "Tool:Masking"]
-	[IShow, "Tool:Visibility"]
-	[IShow, "Tool:Polygroups"]
-	[IShow, "Tool:Contact"]
-	[IShow, "Tool:MorphTarget"]
-	[IShow, "Tool:PolyPaint"]
-	[IShow, "Tool:UVMap"]
-	[IShow, "Tool:TextureMap"]
-	[IShow, "Tool:DisplacementMap"]
-	[IShow, "Tool:NormalMap"]
-	[IShow, "Tool:VectorDisplacementMap"]
-	[IShow, "Tool:DisplayProperties"]
-	[IShow, "Tool:UnifiedSkin"]
-	[IShow, "Tool:Initialize"]
-	[IShow, "Tool:Import"]
-	[IShow, "Tool:Export"]
-	[IShow, "Tool:LoadTool"]
-	[IShow, "Tool:SaveAs"]
-	[IShow, "Tool:CopyTool"]
-	[IShow, "Tool:PasteTool"]
-	[IShow, "Tool:Clone"]
-	[IShow, "Tool:MakePolyMesh3D"]
-	[IShow, "Tool:GoZ"]
-	[IShow, "Tool:All"]
-	[IShow, "Tool:Visible"]
-	[IShow, "Tool:R"],
-	0, //initial state
-	37 //width
-]
-[IEnable, "ZPlugin:customButtons:MinTP"]
 
 
 [ISwitch, "ZPlugin:customButtons:Dynamic", 0,
@@ -1870,8 +1783,7 @@
 		[ISet, "Draw:Project on Mesh", 1]// on 
 		,
 		[noteBar, Value]//else print value
-	]
-	,//else
+	],
 	[VarSet, Value, [IGet, "Draw:Project on Mesh"]]
 	[If,   Value = 1,//If on
 		[ISet, "Draw:Project on Mesh", 0]//all off
@@ -2192,6 +2104,101 @@ NoteIButton
 // ======================================================================
 // DEPRECATED:
 // ======================================================================
+
+
+[ISwitch, "ZPlugin:customButtons:MinTP", 0,
+	"Toggle Minimal Tool Palette",
+	[IHide, "Tool:Geometry"]
+	[IHide, "Tool:ArrayMesh"]
+	[IHide, "Tool:NanoMesh"]
+	[IHide, "Tool:Layers"]
+	[IHide, "Tool:FiberMesh"]
+	[IHide, "Tool:GeometryHD"]
+	[IHide, "Tool:Preview"]
+	[IHide, "Tool:Surface"]
+	[IHide, "Tool:Deformation"]
+	[IHide, "Tool:Masking"]
+	[IHide, "Tool:Visibility"]
+	[IHide, "Tool:Polygroups"]
+	[IHide, "Tool:Contact"]
+	[IHide, "Tool:MorphTarget"]
+	[IHide, "Tool:PolyPaint"]
+	[IHide, "Tool:UVMap"]
+	[IHide, "Tool:TextureMap"]
+	[IHide, "Tool:DisplacementMap"]
+	[IHide, "Tool:NormalMap"]
+	[IHide, "Tool:VectorDisplacementMap"]
+	[IHide, "Tool:DisplayProperties"]
+	[IHide, "Tool:UnifiedSkin"]
+	[IHide, "Tool:Initialize"]
+	[IHide, "Tool:Import"]
+	[IHide, "Tool:Export"]
+	[IHide, "Tool:LoadTool"]
+	[IHide, "Tool:SaveAs"]
+	[IHide, "Tool:CopyTool"]
+	[IHide, "Tool:PasteTool"]
+	[IHide, "Tool:Clone"]
+	[IHide, "Tool:MakePolyMesh3D"]
+	[IHide, "Tool:GoZ"]
+	[IHide, "Tool:All"]
+	[IHide, "Tool:Visible"]
+	[IHide, "Tool:R"]
+	[IHide, "Tool:LoadTool"]
+	[IHide, "Tool:SaveAs"]
+	[IHide, "Tool:CopyTool"]
+	[IHide, "Tool:PasteTool"]
+	[IHide, "Tool:Clone"]
+	[IHide, "Tool:MakePolyMesh3D"]
+	[IHide, "Tool:GoZ"]
+	[IHide, "Tool:All"]
+	[IHide, "Tool:Visible"]
+	//[IPress,"Tool:R"]
+	[IHide, "Tool:R"]
+	[IHide, "Tool:SubTool:Copy"]
+	[IHide, "Tool:SubTool:Paste"]
+	[IHide, "Tool:SubTool:Duplicate"]
+	[IHide, "Tool:SubTool:Append"]
+	[IHide, "Tool:SubTool:Insert"]
+	,
+	[IShow, "Tool:Geometry"]
+	[IShow, "Tool:ArrayMesh"]
+	[IShow, "Tool:NanoMesh"]
+	[IShow, "Tool:Layers"]
+	[IShow, "Tool:FiberMesh"]
+	[IShow, "Tool:GeometryHD"]
+	[IShow, "Tool:Preview"]
+	[IShow, "Tool:Surface"]
+	[IShow, "Tool:Deformation"]
+	[IShow, "Tool:Masking"]
+	[IShow, "Tool:Visibility"]
+	[IShow, "Tool:Polygroups"]
+	[IShow, "Tool:Contact"]
+	[IShow, "Tool:MorphTarget"]
+	[IShow, "Tool:PolyPaint"]
+	[IShow, "Tool:UVMap"]
+	[IShow, "Tool:TextureMap"]
+	[IShow, "Tool:DisplacementMap"]
+	[IShow, "Tool:NormalMap"]
+	[IShow, "Tool:VectorDisplacementMap"]
+	[IShow, "Tool:DisplayProperties"]
+	[IShow, "Tool:UnifiedSkin"]
+	[IShow, "Tool:Initialize"]
+	[IShow, "Tool:Import"]
+	[IShow, "Tool:Export"]
+	[IShow, "Tool:LoadTool"]
+	[IShow, "Tool:SaveAs"]
+	[IShow, "Tool:CopyTool"]
+	[IShow, "Tool:PasteTool"]
+	[IShow, "Tool:Clone"]
+	[IShow, "Tool:MakePolyMesh3D"]
+	[IShow, "Tool:GoZ"]
+	[IShow, "Tool:All"]
+	[IShow, "Tool:Visible"]
+	[IShow, "Tool:R"],
+	0, //initial state
+	37 //width
+]
+[IEnable, "ZPlugin:customButtons:MinTP"]
 
 Replaced with switches
 [IButton,"ZPlugin:customButtons:d1",
