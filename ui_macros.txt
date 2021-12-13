@@ -378,7 +378,7 @@
 ]
 
 
-[IButton,"ZPlugin:customButtons:Check",
+[IButton,"ZPlugin:customButtons:Ck",
 	"Check Mesh Integrity (Tool:Geometry:Check Mesh Integrity)", 
 	[VarSet, buttonPath, "Tool:Geometry:Check Mesh Integrity"]
     [HotKeyText, buttonPath]
@@ -386,7 +386,7 @@
 		[IPress, buttonPath]
 	],
 	0, //initial state
-	42, //width
+	21, //width
 	, //hotkey
 	"", //icon
 	 //height
