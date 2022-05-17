@@ -72,7 +72,9 @@ If, [MemGetSize, tk_startup_memBlock], //returns 1 or greater if memory block ex
 
 // // init R menu
 // [IMinimize, R:, 1]
+[IMinimize, R:Brush]
 [IMinimize, R:Brush Options]
+[IMinimize, R:Hard Surface]
 [IMinimize, R:Curve]
 [IMinimize, R:Viewport]
 [IMinimize, R:Surface]
@@ -85,7 +87,7 @@ If, [MemGetSize, tk_startup_memBlock], //returns 1 or greater if memory block ex
 [IMinimize, R:ProjectFile:UI]
 [IMinimize, R:ProjectFile:UI:TitleBar]
 [IMinimize, R:ProjectFile:UI:HotKeys]
-[IMinimize, R:Scene]
+//[IMinimize, R:Scene]
 
 
 // // init Tool menu
