@@ -1687,6 +1687,7 @@
 	[ISet,   "Transform:Pf", 0] 
 	[ISet,   "Tool:Geometry:s.Dynamic", 1]
 	[ISet,   "Tool:Masking:View Mask", 0]
+	[ISet, "Tool:Geometry:s.SmoothSubdiv", 4] //set subdivision level to 4.
 	,
 	[IModSet, "Transform:Pf", 3]
 	[ISet, "Transform:Pf", 1] 
