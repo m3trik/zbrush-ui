@@ -1,5 +1,8 @@
-###### *A custom ZBrush UI focused around hard surface modeling.
-
+##
+-----------------------------------------------
+A custom ZBrush UI focused around hard surface modeling.
+-----------------------------------------------
+######
 
 ![alt text](https://raw.githubusercontent.com/m3trik/zbrush-ui/master/ui_data/docs/UI_ZBrush.png)
 
